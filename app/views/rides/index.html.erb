@@ -1,7 +1,7 @@
 <h1>ライド一覧</h1>
 <% if user_signed_in? %>
   <% @rides.each do |ride| %>
-    <p><%= ride.title %><%= ride.message %> : 投稿者 : <%= ride.user.email %></p>
+    <p><%= ride.title %><%= ride.message %> : 投稿者 : <%= ride.user_name %></p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>

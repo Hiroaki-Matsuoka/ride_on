@@ -10,5 +10,6 @@ class CreateRides < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+    add_index :rides, :user_id
   end
 end
