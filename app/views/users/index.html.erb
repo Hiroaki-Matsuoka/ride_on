@@ -1,0 +1,24 @@
+<% provide(:title, "Users Index") %>
+
+<input class="form-control" id="myInput" type="text" placeholder="Search Curriculum..">
+
+<table class="table table-striped">
+  <thead class="bg-primary text-white">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tbody id="myTable">
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to "詳細", user_path(user.id) %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>
+
+<%= render 'users_search' %>

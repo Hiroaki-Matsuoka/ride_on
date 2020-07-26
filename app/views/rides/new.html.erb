@@ -1,6 +1,8 @@
+<% provide(:title, "Post Ride") %>
+
 <%= form_for @ride, method: :post do |f| %>
   <h1>新しいライドを投稿しよう！</h1>
   <p>Title: <%= f.text_field :title %></p>
   <p>Message: <%= f.text_area :message %></p>
-  <input type="sbmit" value="SENT"
+  <input type="submit" value="SENT">
 <% end %>

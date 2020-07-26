@@ -1,0 +1,7 @@
+<%= provide(:title, "Edit") %>
+
+<%= form_with model: @ride, local: true do |f| %>
+  <p>Title: <%= f.text_field :title %></p>
+  <p>Message: <%= f.text_area :message %></p>
+  <%= f.submit "送信" %>
+<% end %>

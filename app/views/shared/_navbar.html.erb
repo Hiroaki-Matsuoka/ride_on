@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <a href="/" class="navbar-brand">Ride on</a>
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+   <div class="navbar-nav">
+     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
+     <%= link_to "トップ", rides_path, class: "nav-item nav-link" %>
+     <%= link_to "投稿画面へ", new_ride_path, class: "nav-item nav-link" %>
+     <%= link_to "マイページへ", user_path(current_user.id), class: "nav-item nav-link" %>
+     <%= link_to "ユーザー一覧", users_path, class: "nav-item nav-link" %>
+   </div>
+  </nav>
+<% else %>
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規作成", new_user_registration_path %>
+<% end %>
