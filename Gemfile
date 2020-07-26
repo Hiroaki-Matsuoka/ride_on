@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'rails_best_practices'
 gem 'activeadmin'
+gem 'bootstrap', '~> 4.5.0' 
 
 
 group :development, :test do
