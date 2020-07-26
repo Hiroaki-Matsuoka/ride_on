@@ -1,11 +1,39 @@
 <% provide(:title, "Mypage") %>
-
-<%= @user.name %>
-<%= @user.email %>
-<%= link_to "編集", edit_user_path %>
-
-<% @user.rides.each do |ride| %>
-  <p><%= ride.title %> : <%= ride.message %></p>
-  <%= link_to "編集", edit_ride_path(ride.id) %>
-  <%= link_to "削除", ride_path(ride.id), method: :delete, data: { confirm: '削除しますか？' } %>
-<% end %>
+<div class="row">
+  <!-- ここのcolクラスでサイドのプロフィールが伸びなくなるがなぜか間が空く・・・ -->
+  <div class="col">
+    <div class="card" style="width: 18rem;">
+      <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name %></h5>
+        <p class="card-text"><%= @user.email %></p>
+        <%= link_to "編集", edit_user_path %>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">ライド一覧</li>
+        <li class="list-group-item">投稿写真</li>
+        <li class="list-group-item">他</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <% @user.rides.each do |ride| %>
+      <div class="row no-gutters bg-light position-relative">
+        <div class="col-md-6 mb-md-0 p-md-4">
+          <img src="..." class="w-100" alt="...">
+        </div>
+        <div class="col-md-6 position-static p-4 pl-md-0">
+          <h5 class="mt-0">Title: <%= ride.title %></h5>
+          <p>Message: <%= ride.message %></p>
+          <a href="#" class="stretched-link">Go somewhere</a>
+          <p>Post User: <%= ride.user_name %></p>
+          <p><%= ride.id %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
