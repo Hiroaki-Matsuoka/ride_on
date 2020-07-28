@@ -4,7 +4,7 @@
      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    <div class="navbar-nav">
      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
-     <%= link_to "トップ", rides_path, class: "nav-item nav-link" %>
+     <%= link_to "トップ", root_path, class: "nav-item nav-link" %>
      <%= link_to "投稿画面へ", new_ride_path, class: "nav-item nav-link" %>
      <%= link_to "マイページへ", user_path(current_user.id), class: "nav-item nav-link" %>
      <%= link_to "ユーザー一覧", users_path, class: "nav-item nav-link" %>
