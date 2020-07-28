@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div class="row">
   <!-- ここのcolクラスでサイドのプロフィールが伸びなくなるがなぜか間が空く・・・ -->
-  <div class="col">
+  <div class="col-4 mypage_card">
     <div class="card" style="width: 18rem;">
       <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
       <div class="card-body">
@@ -21,12 +21,11 @@
     </div>
   </div>
 
-
   <!-- 投稿したmicropost一覧 -->
-  <div class="col">
+  <div class="col-6 mypage_microposts">
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
+        <h3>Microposts (<%= @user.microposts.count %>)</h3>
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
