@@ -2,6 +2,8 @@
 
 <input class="form-control" id="myInput" type="text" placeholder="Search Curriculum..">
 
+<%= will_paginate %>
+
 <table class="table table-striped">
   <thead class="bg-primary text-white">
     <tr>
@@ -20,5 +22,7 @@
     </tbody>
   <% end %>
 </table>
+
+<%= will_paginate %>
 
 <%= render 'users_search' %>
