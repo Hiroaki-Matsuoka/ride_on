@@ -33,6 +33,10 @@ class RidesController < ApplicationController
     redirect_to root_path
   end
 
+  def user_rides
+    @user = User.find_by(id: params[:id])
+  end
+
   private
 
   def ride_params
