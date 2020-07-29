@@ -8,6 +8,14 @@
         <p class="card-text"><%= @user.email %></p>
         <%= link_to "編集", edit_user_path %>
       </div>
+      <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
+      <% if current_user.id == @user.id %>
+        <aside class="col-md-4">
+          <section class="micropost_form">
+            <%= render 'shared/micropost_form' %>
+          </section>
+        </aside>
+      <% end %>
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><%= link_to "ライド一覧", "/user_rides/#{@user.id}" %></li>
         <li class="list-group-item">投稿写真</li>
