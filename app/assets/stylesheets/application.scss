@@ -21,3 +21,10 @@ body {
   background-image: url("/images/top_bg.jpg");
   background-size: cover;
 }
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

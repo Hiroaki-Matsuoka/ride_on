@@ -1,16 +1,28 @@
 <% if user_signed_in? %>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
      <a href="/" class="navbar-brand">Ride on</a>
-     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    <div class="navbar-nav">
      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
      <%= link_to "トップ", root_path, class: "nav-item nav-link" %>
      <%= link_to "投稿画面へ", new_ride_path, class: "nav-item nav-link" %>
-     <%= link_to "マイページへ", user_path(current_user.id), class: "nav-item nav-link" %>
+     <li class="dropdown">
+       <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            マイページ
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href=<%= "/users/#{current_user.id}" %>>詳細ページへ</a>
+          <a class="dropdown-item" href=<%= "/user_rides/#{current_user.id}" %>>投稿したライド</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+     </li>
      <%= link_to "ユーザー一覧", users_path, class: "nav-item nav-link" %>
+   </div>
    </div>
   </nav>
 <% else %>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規作成", new_user_registration_path %>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/" class="navbar-brand">Ride on</a>
+  </nav>
 <% end %>

@@ -1,6 +1,20 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Top page
+.top_title {
+  margin: 100px 0 200px 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+.top_text {
+  color: #ffffff;
+}
+
+.p_text {
+  font-size: 20px;
+}
+
 #error_explanation {
   color: red;
   ul {
