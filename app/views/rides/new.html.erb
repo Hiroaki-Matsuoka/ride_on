@@ -1,9 +1,11 @@
 <% provide(:title, "Post Ride") %>
+
 <div class="container mt-3">
   <%= form_for @ride, method: :post do |f| %>
     <h1>新しいライドを投稿しよう！</h1>
     <p>Title: <%= f.text_field :title %></p>
     <p>Message: <%= f.text_area :message %></p>
+    <p>場所: <%= f.text_field :address %></p>
     <input class="btn btn-primary" type="submit" value="SENT">
   <% end %>
 </div>

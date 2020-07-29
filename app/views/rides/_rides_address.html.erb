@@ -1,0 +1,33 @@
+<script type="text/javascript">
+  function initMap() {
+    var test ={lat: <%= @ride.latitude %>, lng: <%= @ride.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15,
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    var contentString = '住所：<%= @ride.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+
+    });
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+<script async defer
+            src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAWtbjF84I5p5DfN4im4yf8Sf5wzZq8RiE&callback=initMap">
+</script>
+<style type="text/css">
+#map { height: 200px;
+       width: 70%;}
+</style>
