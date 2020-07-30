@@ -11,7 +11,7 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.create(title: ride_params[:title], message: ride_params[:message], address: ride_params[:address], user_id: current_user.id)
     if @ride.save
-      redirect_to root_path
+      redirect_to rides_path
     else
 
     end
@@ -33,12 +33,12 @@ class RidesController < ApplicationController
 
   def destroy
     Ride.find(params[:id]).destroy
-    flash[:success] = "User deleted"
-    redirect_to root_path
+    flash[:notice] = "User deleted"
+    redirect_to rides_path
   end
 
   def user_rides
-    @user = User.find_by(id: params[:id])
+    @user = User.find(current_user.id)
   end
 
   private

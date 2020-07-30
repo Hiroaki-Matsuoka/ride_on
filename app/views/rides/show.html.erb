@@ -1,3 +1,12 @@
+<% provide(:title, "Ride") %>
 
-<%= render 'rides/rides_address'%>
-<div id="map"></div>
+<div class="card mt-5">
+  <div class="card-body">
+    <h5 class="card-title">タイトル : <%= @ride.title %></h5>
+    <p>投稿者 : <%= @ride.user.name %></p>
+    <p class="card-text">メッセージ : <%= @ride.message %></p>
+    <p class="card-text"><small class="text-muted"><%= @ride.created_at %></small></p>
+  </div>
+  <%= render 'rides/rides_address'%>
+  <div id="map" class="m-5"></div>
+</div>

@@ -1,3 +1,5 @@
+<% provide(:title, @user.name + " Rides") %>
+
 <div class="col">
   <% @user.rides.each do |ride| %>
     <div class="row no-gutters bg-light position-relative mt-3">
@@ -9,9 +11,9 @@
         <p>Message: <%= ride.message %></p>
         <p>Post User: <%= ride.user_name %></p>
         <%= link_to "詳細", ride_path(ride) %>
+          <%= link_to "delete", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"} %>
         <p><%= ride.id %></p>
       </div>
     </div>
   <% end %>
-</div>
 </div>
