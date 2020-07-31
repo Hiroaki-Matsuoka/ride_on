@@ -1,4 +1,5 @@
 <% provide(:title, @user.name) %>
+
 <div class="row">
   <div class="col-4 mypage_card">
     <div class="card" style="width: 18rem;">
@@ -6,6 +7,10 @@
       <div class="card-body">
         <h5 class="card-title"><%= @user.name %></h5>
         <p class="card-text"><%= @user.email %></p>
+        <section class="stats">
+          <%= render 'shared/stats' %>
+        </section>
+        <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
         <% if current_user.id == @user.id %>
           <%= link_to "編集", edit_user_path %>
       </div>
@@ -22,13 +27,14 @@
         <li class="list-group-item">他</li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Follow</a>
-        <a href="#" class="card-link">Follower</a>
+        ex...
       </div>
     </div>
   </div>
   <!-- ユーザーがmicropost一覧 -->
   <div class="col-6 mypage_microposts">
+    <!-- フォロー・アンフォローのボタン -->
+    <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>
       <ol class="microposts">
         <h3>Microposts (<%= @user.microposts.count %>)</h3>

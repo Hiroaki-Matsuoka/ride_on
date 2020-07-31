@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   root to: 'staticpages#home'
   resources :rides
   get "user_rides/:id" => "rides#user_rides"
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
