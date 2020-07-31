@@ -1,10 +1,16 @@
 <% if user_signed_in? %>
 <div class="container">
-  <div class="top_title">
-    <h1 class="display-1 top_text">Ride on</h1>
-    <h2 class="display-6 top_text">ロードレーサーのマッチングアプリ</h2>
-    <p class="p_text top_text">さっそくライドを投稿しよう！</p>
-    <%= link_to "ライドを投稿！", new_ride_path, class: "btn btn-primary" %>
+  <div class="row">
+    <div class="col-4 top_title">
+      <h1 class="display-1 top_text">Ride on</h1>
+      <h2 class="display-6 top_text">ロードレーサーのマッチングアプリ</h2>
+      <p class="p_text top_text">さっそくライドを投稿しよう！</p>
+      <%= link_to "ライドを投稿！", new_ride_path, class: "btn btn-primary" %>
+    </div>
+    <div class="col-md-8">
+       <h3>ユーザーのひとこと</h3>
+       <%= render 'shared/feed' %>
+     </div>
   </div>
 <% else %>
   <div class="container">
