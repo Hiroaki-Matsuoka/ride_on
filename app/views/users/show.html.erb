@@ -22,25 +22,27 @@
         </aside>
       <% end %>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= link_to "ライド一覧", "/user_rides/#{@user.id}" %></li>
+        <li class="list-group-item"><%= link_to "#{@user.name}のライド一覧", "/user_rides/#{@user.id}" %></li>
         <li class="list-group-item">投稿写真</li>
-        <li class="list-group-item">他</li>
       </ul>
       <div class="card-body">
-        ex...
+        <!-- フォロー・アンフォローのボタン -->
+        <%= render 'follow_form' if user_signed_in? %>
       </div>
     </div>
   </div>
   <!-- ユーザーがmicropost一覧 -->
   <div class="col-6 mypage_microposts">
-    <!-- フォロー・アンフォローのボタン -->
-    <%= render 'follow_form' if user_signed_in? %>
     <% if @user.microposts.any? %>
       <ol class="microposts">
-        <h3>Microposts (<%= @user.microposts.count %>)</h3>
+        <h3 class="ml-3"><%= @user.name %>のお知らせ(<%= @user.microposts.count %>)</h3>
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
+    <% else %>
+      <div class="container">
+        <h1>No Microposts, somewhere post it.</h1>
+      </div>
     <% end %>
   </div>
 </div>

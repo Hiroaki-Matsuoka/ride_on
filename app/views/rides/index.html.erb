@@ -1,9 +1,9 @@
 <% provide(:title, "Rides index") %>
-
-<h1>ライド一覧</h1>
+<div class="container col-6">
+<h1 class="bg_wtext mt-3">ライド一覧</h1>
 <% if user_signed_in? %>
   <% @rides.each do |ride| %>
-    <div class="row no-gutters bg-light position-relative mt-3">
+    <div class="row no-gutters bg-light position-relative mt-3 rides_index">
       <div class="col-md-4 mb-md-0 p-md-4">
         <img src="<%= "/user_images/#{ride.user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
       </div>
@@ -19,6 +19,7 @@
       </div>
     </div>
   <% end %>
+</div>
 <% else %>
   <p>ログインしてください</p>
 <% end %>

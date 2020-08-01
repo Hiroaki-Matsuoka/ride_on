@@ -23,18 +23,41 @@
   }
 }
 
+// ユーザー一覧
+
+.users_st {
+  list-style: none;
+  padding: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
 // ride投稿画面
 
 .new_ride_form {
   padding: 50px 0 100px 0;
+  border-radius: 8px;
 }
 
+.rides_index {
+  border-radius: 8px;
+}
 // .field_with_errors {
 //   @extend .has-error;
 //   .form-control {
 //     color: $state-danger-text;
 //   }
 // }
+
+// ライド一覧
+
+.bg_wtext {
+  color: #ffffff;
+}
 
 // users_show
 
