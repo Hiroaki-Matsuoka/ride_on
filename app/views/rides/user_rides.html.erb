@@ -6,17 +6,18 @@
   <% @user.rides.each do |ride| %>
     <div class="row no-gutters bg-light position-relative mt-3">
       <div class="col-md-4 mb-md-0 p-md-4">
-        <img src="<%= "/user_images/#{ride.user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
+        <img src="<%= "/user_images/#{ride.user_image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
       </div>
       <div class="col-md-6 position-static p-4 pl-md-0">
         <h5 class="mt-0">Title: <%= ride.title %></h5>
         <h5>[Message]</h5>
         <p><%= ride.message %></p>
         <p>投稿者: <%= ride.user_name %></p>
-        <%= link_to "More", ride_path(ride) %>
+        <%= link_to "Join", ride_path(ride), class: "btn btn-primary" %>
+        <%= link_to "More", ride_path(ride), class: "btn btn-primary" %>
         <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->
         <% if current_user.id == ride.user.id  %>
-          <%= link_to "delete", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"} %>
+          <%= link_to "delete", ride_path(ride), method: :delete, class: "btn btn-danger", data: {confirm: "削除しますか？"} %>
         <% end %>
       </div>
     </div>

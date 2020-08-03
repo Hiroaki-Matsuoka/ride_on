@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :rides
+  has_many :joins
+  has_many :j_rides, through: :joins, source: :ride 
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name: "Relationship",
                                 foreign_key: "follower_id",
@@ -31,6 +33,15 @@ class User < ApplicationRecord
                      WHERE follower_id = :user_id"
     Micropost.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
+  end
+
+  def join(ride)
+    joins.find_or_create_by(ride_id: ride.id)
+  end
+
+  def unjoin(ride)
+    join = joins.find_by(ride_id: ride.id)
+    join.destroy if join
   end
 
 end
