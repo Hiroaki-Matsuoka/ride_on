@@ -11,7 +11,7 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.create(title: ride_params[:title], message: ride_params[:message], address: ride_params[:address], user_id: current_user.id)
     if @ride.save
-      redirect_to rides_path
+      redirect_to "/user_rides/#{current_user.id}"
     else
 
     end
@@ -39,6 +39,9 @@ class RidesController < ApplicationController
 
   def user_rides
     @user = User.find(current_user.id)
+    @rides = Ride.all
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @micropost = current_user.microposts.build
   end
 
   private

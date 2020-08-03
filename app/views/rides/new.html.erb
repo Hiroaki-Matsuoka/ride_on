@@ -4,11 +4,11 @@
   <%= form_for @ride, method: :post do |f| %>
     <h1>新しいライドを投稿しよう！</h1>
     <label>Title</label>
-    <p><%= f.text_field :title, {class: "form-control col-6"} %></p>
+    <p><%= f.text_field :title, {class: "form-control col-9"} %></p>
     <label>Message</label>
-    <p><%= f.text_area :message, size: "20x10", class: "form-control col-6" %></p>
+    <p><%= f.text_area :message, size: "20x10", class: "form-control col-9" %></p>
     <label>Address</label>
-    <p><%= f.text_field :address, {class: "form-control col-6"} %></p>
+    <p><%= f.text_field :address, {class: "form-control col-9"} %></p>
     <input class="btn btn-primary" type="submit" value="投稿">
   <% end %>
 </div>

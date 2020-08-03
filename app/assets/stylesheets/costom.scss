@@ -3,7 +3,7 @@
 
 // Top page
 .top_title {
-  margin: 100px 0 200px 0;
+  // margin: 100px 0 200px 0;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -23,6 +23,12 @@
   }
 }
 
+// current_userのトップ画面
+
+.user_top_card {
+  margin: 320px 0 0 150px !important;
+}
+
 // ユーザー一覧
 
 .users_st {
@@ -36,11 +42,14 @@
     border-top: 1px solid #e8e8e8;
   }
 }
+
 // ride投稿画面
 
 .new_ride_form {
   padding: 50px 0 100px 0;
   border-radius: 8px;
+  width: 700px !important;
+  margin: 0 auto !important;
 }
 
 .rides_index {
@@ -67,6 +76,12 @@
 
 .mypage_microposts {
   margin-top: 50px;
+}
+
+.j_icon {
+  padding: 5px;
+  border-radius: 4px;
+  float: right;
 }
 
 /* microposts */
