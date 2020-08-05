@@ -11,10 +11,10 @@ Ride.create(title: "高野山ライド", message: "みんなで高野山へい�
 #             image_name: "default.jpeg")
 
 users= [
-{ name: 'Hiro', email: 'test@example.com', password: 'test1' },
-{ name: 'Aki', email: 'hoge@example.com', password: 'test2' },
-{ name: 'Jakub', email: 'foo@example.com', password: 'test3' },
-{ name: 'miyo', email: 'bar@example.com', password: 'test4' },
+{ name: 'Hiiro', email: 'tes@example.com', password: 'password' },
+{ name: 'Aki', email: 'hoge@example.com', password: 'password' },
+{ name: 'Jakub', email: 'foo@example.com', password: 'password' },
+{ name: 'miyo', email: 'bar@example.com', password: 'password' },
 ]
 users.each do |record|
  User.create!(record) unless User.find_by(email: record[:email])
