@@ -4,19 +4,31 @@ Ride.create(title: "アワイチライド", message: "みんなで淡路島を�
 Ride.create(title: "ビワイチライド", message: "みんなで琵琶湖を一周しよう！", address: "大阪府和泉市", user_id: 1)
 Ride.create(title: "高野山ライド", message: "みんなで高野山へいこう！", address: "大阪府和泉市", user_id: 1)
 
-User.create!(name: "Hiro",
-            email: "test@example.com",
-            password: "password",
-            password_confirmation: "password",
-            image_name: "default.jpeg")
+# User.create!(name: "Hiro",
+#             email: "test@example.com",
+#             password: "password",
+#             password_confirmation: "password",
+#             image_name: "default.jpeg")
 
-99.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n+1}@example.com"
-  password = "password"
-  User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password,
-               image_name: "default.jpeg")
+users= [
+{ name: 'Hiro', email: 'test@example.com', password: 'test1' },
+{ name: 'Aki', email: 'hoge@example.com', password: 'test2' },
+{ name: 'Jakub', email: 'foo@example.com', password: 'test3' },
+{ name: 'miyo', email: 'bar@example.com', password: 'test4' },
+]
+users.each do |record|
+ User.create!(record) unless User.find_by(email: record[:email])
 end
+
+
+
+# 99.times do |n|
+#   name  = Faker::Name.name
+#   email = "example-#{n+1}@example.com"
+#   password = "password"
+#   User.create!(name:  name,
+#                email: email,
+#                password:              password,
+#                password_confirmation: password,
+#                image_name: "default.jpeg")
+# end
