@@ -1,26 +1,29 @@
 <% if user_signed_in? %>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-     <a href="/" class="navbar-brand">Ride on</a>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-   <div class="navbar-nav">
-     <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link" %>
-     <%= link_to "トップ", root_path, class: "nav-item nav-link" %>
-     <%= link_to "投稿画面へ", new_ride_path, class: "nav-item nav-link" %>
-     <li class="dropdown">
-       <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a href="/" class="navbar-brand">Ride on</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="navbar-nav">
+        <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link fas fa-sign-out-alt" %>
+        <%= link_to " トップ", root_path, class: "nav-item nav-link fas fa-home" %>
+        <%= link_to " 投稿画面へ", new_ride_path, class: "nav-item nav-link fas fa-plus" %>
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle fas fa-user" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             マイページ
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href=<%= "/users/#{current_user.id}" %>>詳細ページへ</a>
-          <a class="dropdown-item" href=<%= "/user_rides/#{current_user.id}" %>>投稿したライド</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-     </li>
-     <%= link_to "ユーザー一覧", users_path, class: "nav-item nav-link" %>
-     <%= link_to "ライド一覧", rides_path, class: "nav-item nav-link" %>
-   </div>
-   </div>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href=<%= "/users/#{current_user.id}" %>>詳細ページへ</a>
+            <a class="dropdown-item" href=<%= "/user_rides/#{current_user.id}" %>>投稿したライド</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <%= link_to " ユーザー一覧", users_path, class: "nav-item nav-link fas fa-users" %>
+        <%= link_to " ライド一覧", rides_path, class: "nav-item nav-link fas fa-bicycle" %>
+      </div>
+    </div>
   </nav>
 <% else %>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">

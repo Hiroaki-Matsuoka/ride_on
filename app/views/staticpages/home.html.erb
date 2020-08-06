@@ -1,10 +1,12 @@
 <% if user_signed_in? %>
 <div class="container">
   <div class="row">
-    <div class="col-6 top_title">
+    <div class="top_title">
       <h1 class="display-1 top_text">Ride on</h1>
       <h2 class="display-6 top_text">ロードレーサーのマッチングアプリ</h2>
-      <p class="p_text top_text">さっそくライドを投稿しよう！</p>
+      <p class="p_text top_text">サイクリストのコミュニティSNSです。</p>
+      <p class="p_text top_text">写真、ライド、コメントを投稿して新たな仲間を見つけましょう。</p>
+      <p class="p_text top_text">Google Mapによる集合場所の特定、カフェの詳細な情報などから日々のサイクリングを快適なものにします。</p>
       <%= link_to "ライドを投稿！", new_ride_path, class: "btn btn-primary" %>
     </div>
   </div>
@@ -12,11 +14,13 @@
   <div class="container">
     <div class="top_title">
       <h1 class="display-1 top_text">Ride on</h1>
-      <p class="p_text top_text">サイクリストのコミュニティSNSです。</p>
-      <p class="p_text top_text">写真、ライド、コメントを投稿して新たな仲間を見つけましょう。</p>
-      <p class="p_text top_text">Google Mapによる集合場所の特定、カフェの詳細な情報などから日々のサイクリングを快適なものにします。</p>
+      <h3 class="p_text top_text">Ride onとは？</h3>
+      <p class="p_text top_text">サイクリングの仲間を募るためのWebアプリです。</p>
+      <p class="p_text top_text">日時と集合場所を投稿して仲間を集めたり投稿されたライドに参加することができます。</p>
+      <p class="p_text top_text">さっそく登録して使ってみましょう！</p>
     </div>
     <a href="/users/sign_in"><button type="button" class="btn btn-primary btn-lg btn-block my-3">ログインする</button></a>
     <a href="/users/sign_in"><button type="button" class="btn btn-secondary btn-lg btn-block my-3">新規登録</button></a>
+    <img src="./../../assets/images/sample_1.png" alt="投稿したライド">
   </div>
 <% end %>

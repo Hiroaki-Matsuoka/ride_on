@@ -12,10 +12,10 @@
         <h5 class="mt-0">Title: <%= ride.title %></h5>
         <p>Message: <%= ride.message %></p>
         <p>投稿者: <%= ride.user_name %></p>
-        <%= link_to "More", ride_path(ride), class: "btn btn-primary" %>
+        <%= link_to "詳細", ride_path(ride), class: "btn btn-primary" %>
         <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->
         <% if current_user.id == ride.user.id  %>
-          <%= link_to "delete", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
+          <%= link_to "削除", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
         <% end %>
         <!-- 参加ボタン -->
         <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
