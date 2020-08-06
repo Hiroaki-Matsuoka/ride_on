@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :rides
   has_many :joins
-  has_many :j_rides, through: :joins, source: :ride 
+  has_many :j_rides, through: :joins, source: :ride
   has_many :microposts, dependent: :destroy
   has_many :active_relationships, class_name: "Relationship",
                                 foreign_key: "follower_id",
@@ -42,6 +42,12 @@ class User < ApplicationRecord
   def unjoin(ride)
     join = joins.find_by(ride_id: ride.id)
     join.destroy if join
+  end
+
+  def self.guest
+    find_or_create_by!(name: 'guestさん', email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
   end
 
 end
