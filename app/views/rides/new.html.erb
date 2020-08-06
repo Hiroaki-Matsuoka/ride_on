@@ -5,6 +5,9 @@
     <h1>新しいライドを投稿しよう！</h1>
     <label>Title</label>
     <p><%= f.text_field :title, {class: "form-control col-9"} %></p>
+    <%= f.datetime_field :sch_datetime %>
+    <p><%= f.text_field :distance, {class: "form-control col-9"} %></p>
+    <p><%= f.text_field :rank, {class: "form-control col-9"} %></p>
     <label>Message</label>
     <p><%= f.text_area :message, size: "20x10", class: "form-control col-9" %></p>
     <label>Address</label>

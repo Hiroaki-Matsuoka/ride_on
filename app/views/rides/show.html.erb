@@ -9,6 +9,9 @@
           <%= @ride.user_name %></p>
         <p class="card-text">メッセージ :
           <%= @ride.message %></p>
+          <%= @ride.sch_datetime.to_s(:datetime) %>
+          <%= @ride.distance %>
+          <%= @ride.rank %>
         <p class="card-text">
           <small class="text-muted"><%= @ride.created_at %></small>
         </p>
