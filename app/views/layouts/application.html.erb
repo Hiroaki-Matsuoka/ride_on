@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-     <title><%= yield(:title) %> | Ride on</title>
+    <title><%= yield(:title) %>
+      | Ride on</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,6 +18,6 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'layouts/notifications' %>
-      <%= yield %>
+    <%= yield %>
   </body>
 </html>

@@ -1,10 +1,10 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
-
 // Top page
 .top_title {
   // margin: 100px 0 200px 0;
   font-family: 'Oswald', sans-serif;
+
   h3 {
     font-size: 48px;
   }
@@ -20,36 +20,32 @@
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
-    margin: 0 0 30px 0;
+    margin: 0 0 30px;
   }
 }
-
 // current_userのトップ画面
-
 .user_top_card {
   margin: 320px 0 0 150px !important;
 }
-
 // ユーザー一覧
-
 .users_st {
   list-style: none;
   padding: 0;
   background-color: #ffffff;
   padding: 10px;
   border-radius: 4px;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
 }
-
 // ride投稿画面
-
 .new_ride_form {
-  padding: 50px 0 100px 0;
+  padding: 50px 0 100px;
   border-radius: 8px;
   width: 700px !important;
   margin: 0 auto !important;
@@ -64,15 +60,11 @@
 //     color: $state-danger-text;
 //   }
 // }
-
 // ライド一覧
-
 .bg_wtext {
   color: #ffffff;
 }
-
 // users_show
-
 .mypage_card {
   margin-top: 50px;
 }
@@ -86,19 +78,19 @@
   border-radius: 4px;
   float: right;
 }
-
 /* microposts */
-
 .microposts {
   list-style: none;
   padding: 0;
   background-color: #ffffff;
   padding: 10px;
   border-radius: 4px;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+
   .user {
     margin-top: 5em;
     padding-top: 0;
@@ -106,19 +98,23 @@
     font-size: 24px;
     margin-right: 8px;
   }
+
   .content {
     display: block;
     margin-left: 60px;
+
     img {
       display: block;
       padding: 5px 0;
     }
   }
+
   .timestamp {
     color: gray;
     display: block;
     margin-left: 60px;
   }
+
   .gravatar {
     float: left;
     margin-right: 10px;
@@ -135,31 +131,34 @@ aside {
 
 span.image {
   margin-top: 10px;
+
   input {
     border: 0;
   }
 }
-
 // follow/follower機能
-
 .stats {
   overflow: auto;
   margin-top: 0;
   padding: 0;
+
   a {
     float: left;
     padding: 0 10px;
     border-left: 1px solid lightgray;
     color: gray;
+
     &:first-child {
       padding-left: 0;
       border: 0;
     }
+
     &:hover {
       text-decoration: none;
       color: blue;
     }
   }
+
   strong {
     display: block;
   }

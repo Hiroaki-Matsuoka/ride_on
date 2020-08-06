@@ -1,54 +1,53 @@
 <% provide(:title, @user.name) %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-4 mypage_card">
-      <div class="card" style="width: 18rem;">
-        <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
-        <div class="card-body">
-          <h5 class="card-title"><%= @user.name %></h5>
-          <p class="card-text"><%= @user.email %></p>
-          <section class="stats">
-            <%= render 'shared/stats' %>
-          </section>
-          <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
-          <% if current_user.id == @user.id %>
-            <%= link_to "編集", edit_user_path %>
-        </div>
-        <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
-          <aside class="col-md-4">
-            <section class="micropost_form">
-              <%= render 'shared/micropost_form' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-4 mypage_card">
+        <div class="card" style="width: 18rem;">
+          <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
+          <div class="card-body">
+            <h5 class="card-title"><%= @user.name %></h5>
+            <p class="card-text"><%= @user.email %></p>
+            <section class="stats">
+              <%= render 'shared/stats' %>
             </section>
-          </aside>
-        <% end %>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><%= link_to "#{@user.name}のライド一覧", "/user_rides/#{@user.id}" %></li>
-          <li class="list-group-item">投稿写真</li>
-          <% @user.j_rides.each do |u| %>
-            <%= u.title %>
+            <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
+            <% if current_user.id == @user.id %>
+              <%= link_to "編集", edit_user_path %>
+            </div>
+            <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
+            <aside class="col-md-4">
+              <section class="micropost_form">
+                <%= render 'shared/micropost_form' %>
+              </section>
+            </aside>
           <% end %>
-        </ul>
-        <div class="card-body">
-          <!-- フォロー・アンフォローのボタン -->
-          <%= render 'follow_form' if user_signed_in? %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= link_to "#{@user.name}のライド一覧", "/user_rides/#{@user.id}" %></li>
+            <li class="list-group-item">投稿写真</li>
+            <% @user.j_rides.each do |u| %>
+              <%= u.title %>
+            <% end %>
+          </ul>
+          <div class="card-body">
+            <!-- フォロー・アンフォローのボタン -->
+            <%= render 'follow_form' if user_signed_in? %>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- ユーザーがmicropost一覧 -->
-    <div class="col-6 mypage_microposts">
-      <% if @user.microposts.any? %>
-        <ol class="microposts">
-          <h3 class="ml-3"><%= @user.name %>のお知らせ(<%= @user.microposts.count %>)</h3>
-          <%= render @microposts %>
-        </ol>
-        <%= will_paginate @microposts %>
-      <% else %>
-        <div class="container">
-          <h1>No Microposts, somewhere post it.</h1>
-        </div>
-      <% end %>
+      <!-- ユーザーがmicropost一覧 -->
+      <div class="col-6 mypage_microposts">
+        <% if @user.microposts.any? %>
+          <ol class="microposts">
+            <h3 class="ml-3"><%= @user.name %>のお知らせ(<%= @user.microposts.count %>)</h3>
+            <%= render @microposts %>
+          </ol>
+          <%= will_paginate @microposts %>
+        <% else %>
+          <div class="container">
+            <h1>No Microposts, somewhere post it.</h1>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
-
-</div>
