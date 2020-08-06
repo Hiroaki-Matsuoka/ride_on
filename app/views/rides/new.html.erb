@@ -3,11 +3,22 @@
   <div class="container mt-3 no-gutters bg-light new_ride_form">
     <%= form_for @ride, method: :post do |f| %>
     <h1>新しいライドを投稿しよう！</h1>
-    <label>Title</label>
+    <label>タイトル</label>
     <p><%= f.text_field :title, {class: "form-control col-9"} %></p>
-    <%= f.datetime_field :sch_datetime %>
-    <p><%= f.text_field :distance, {class: "form-control col-9"} %></p>
-    <p><%= f.text_field :rank, {class: "form-control col-9"} %></p>
+    <label>予定日</label>
+    <br />
+    <%= f.datetime_field :sch_datetime %><br />
+    <br />
+    <label>走行距離</label>
+    <br />
+    <%= f.select :distance, ['0~50km', '51~100km', '100~200km', '201km~'], { include_blank: '選択してください' }, class: 'pub' %><br />
+    <br />
+    <label><%= f.radio_button :rank, '1', class: :rd %> 1</label>
+    <label><%= f.radio_button :rank, '2', class: :rd %> 2</label>
+    <label><%= f.radio_button :rank, '3', class: :rd %> 3</label>
+    <label><%= f.radio_button :rank, '4', class: :rd %> 4</label>
+    <label><%= f.radio_button :rank, '5', class: :rd %> 5</label><br />
+    <br />
     <label>Message</label>
     <p><%= f.text_area :message, size: "20x10", class: "form-control col-9" %></p>
     <label>Address</label>

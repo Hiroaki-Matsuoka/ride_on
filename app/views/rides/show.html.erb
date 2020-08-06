@@ -9,11 +9,13 @@
           <%= @ride.user_name %></p>
         <p class="card-text">メッセージ :
           <%= @ride.message %></p>
-          <%= @ride.sch_datetime.to_s(:datetime) %>
-          <%= @ride.distance %>
-          <%= @ride.rank %>
+        <p><%= @ride.sch_datetime.to_s(:datetime) %></p>
+        <p>走行距離</p>
+        <p><%= @ride.distance %></p>
+        <p>ライドランク</p>
+        <p><%= @ride.rank %></p>
         <p class="card-text">
-          <small class="text-muted"><%= @ride.created_at %></small>
+          <small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small>
         </p>
         <p>参加予定者:</p>
         <% @ride.j_users.each do |n| %>

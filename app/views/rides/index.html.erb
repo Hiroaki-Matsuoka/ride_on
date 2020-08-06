@@ -11,6 +11,9 @@
           <div class="col-md-6 position-static p-4 pl-md-0">
             <h5 class="mt-0">Title:
               <%= ride.title %></h5>
+              <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
+                <p><i class="fas fa-biking fa-2x"></i></p>
+              <% end %>
             <p>Message:
               <%= ride.message %></p>
             <p>投稿者:
