@@ -21,6 +21,8 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    @microposts = @ride.microposts
+    @micropost = @ride.microposts.build
   end
 
   def edit
