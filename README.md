@@ -1,24 +1,27 @@
-# README
+# Ride on
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
 
-Things you may want to cover:
+サイクリスト用の練習会投稿アプリです。
+毎回参加者が変わる練習会でその都度LINEグループを立ち上げていたらキリがありません。
+参加者のレベルに合わせた一回限りのトークルームを作成することでスムーズな練習会を開催しましょう。
 
-* Ruby version
+## バージョン
+Ruby 2.6.5
+Ruby on Rails 5.2.4.3
 
-* System dependencies
+### 機能
 
-* Configuration
+集合場所の住所、実施したい日時、レベルを設定して投稿します。
 
-* Database creation
 
-* Database initialization
+投稿されたライドの条件に合う参加者を募集します。
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+参加者は参加ボタンをクリック！
 
-* Deployment instructions
 
-* ...
+参加ボタンをクリックするとライドの詳細に参加者一覧が表示されます。
+
+
+細かな調整はライドの中のコメント欄やりとりできます。

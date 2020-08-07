@@ -47,7 +47,7 @@
 .new_ride_form {
   padding: 50px 0 100px;
   border-radius: 8px;
-  width: 700px !important;
+  width: 90% !important;
   margin: 0 auto !important;
 }
 
@@ -85,6 +85,46 @@
   border-radius: 8px;
   float: right;
 }
+
+// ライド詳細画面
+
+.message_to_r {
+  margin: 0 5%;
+  width: 90% !important;
+}
+
+.message_btn {
+  margin-right: 5%;
+  margin-bottom: 100px;
+}
+
+.message_posts {
+  margin: 0 5%;
+}
+
+.ride_containts {
+  margin: 0 5%;
+  h5 {
+    font-size: 36px;
+  }
+  .ride_poster {
+    background-color: lightgray;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  .ride_details {
+    margin: 50px;
+  }
+  .distance_mark {
+    background-color: lightgreen;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+}
+
+
 /* microposts */
 .microposts {
   list-style: none;

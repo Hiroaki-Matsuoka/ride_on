@@ -2,53 +2,55 @@
 
   <div class="container">
     <div class="card mt-5">
-      <div class="card-body">
-        <h5 class="card-title">タイトル :
-          <%= @ride.title %></h5>
-        <p>投稿者 :
-          <%= @ride.user_name %></p>
+      <div class="card-body ride_containts">
+        <div class="row">
+          <h5 class="card-title col">タイトル :
+            <%= @ride.title %></h5>
+          <p class="ride_poster col-2">投稿者 :
+            <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
+        </div>
+        <p>開催日 : <%= @ride.sch_datetime.to_s(:datetime) %></p>
+        <hr>
+
         <p class="card-text">メッセージ :
           <%= @ride.message %></p>
-        <p><%= @ride.sch_datetime.to_s(:datetime) %></p>
-        <p>走行距離</p>
-        <p><%= @ride.distance %></p>
-        <p>ライドランク</p>
-        <p><%= @ride.rank %></p>
-        <p class="card-text">
-          <small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small>
-        </p>
+        <hr>
+        <div class="row ride_details">
+          <p class="distance_mark col">走行距離 : <%= @ride.distance %></p>
+          <p class="col">ライドランク<%= @ride.rank %></p>
+          <p class="card-text col">
+            <small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small>
+          </p>
+        </div>
+        <hr>
         <p>参加予定者:</p>
         <% @ride.j_users.each do |n| %>
+          <img src="<%= "/user_images/#{n.image_name}" %>" alt="user_image" width="30" height="30">
           <%= n.name %>
         <% end %>
       </div>
       <%= render 'rides/rides_address'%>
       <div id="map" class="m-5"></div>
-    </div>
-
-
-    <p class="mt-5">コメント一覧</p>
-      <% @microposts.each do |c| %>
-        <div>
-          <% unless c.user.blank? %>
-            <a href="<%= user_path(c.user_id) %>"><%= image_tag c.user.image.to_s,
-              class:"rounded-circle icon_image mr-3 mb-3"%></a>
-            <% end %>
-          <%= c.user.name unless c.user.blank? %>
+      <p class="mt-5 mb-3 message_posts">コメント一覧</p>
+        <% @microposts.each do |c| %>
+          <div class="message_posts">
+            <% unless c.user.blank? %>
+              <a href="<%= user_path(c.user_id) %>"><img src="<%= "/user_images/#{c.user.image_name}" %>" alt="user_image" width="30" height="30"
+                class:"rounded-circle icon_image mr-3 mb-3"></a>
+              <% end %>
+            <%= c.user.name unless c.user.blank? %>
+            <br />
+            <%= c.content %>
+          </div>
           <br />
-          <%= c.content %>
-        </div>
-        <br />
-      <% end %>
-      <% if user_signed_in? %>
-        <%= form_with(model: [@ride, @micropost], local: true) do |f| %>
-          <%= f.text_area :content, class: "form-control", rows: 5 %>
-          <%= button_tag type: "submit", class: "btn btn-success float-right mt-1" do %>
-            <i class="far fa-comments"></i> コメントする
+        <% end %>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@ride, @micropost], local: true) do |f| %>
+            <%= f.text_area :content, class: "form-control message_to_r", rows: 5 %>
+            <%= button_tag type: "submit", class: "btn btn-success float-right mt-1 message_btn" do %>
+              <i class="far fa-comments">コメントする</i>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-
-
-
+    </div>
   </div>
