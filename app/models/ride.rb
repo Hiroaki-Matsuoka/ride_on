@@ -14,4 +14,5 @@ class Ride < ApplicationRecord
   def user_image_name
     user.image_name
   end
+
 end

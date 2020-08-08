@@ -23,6 +23,20 @@ class RidesController < ApplicationController
     @ride = Ride.find(params[:id])
     @microposts = @ride.microposts
     @micropost = @ride.microposts.build
+
+    case @ride.rank
+    when 1
+      @rank = "初心者OK"
+    when 2
+      @rank = "中級者向け"
+    when 3
+      @rank = "上級者向け"
+    when 4
+      @rank = "ランク4"
+    else
+      @rank = "ランク5"
+    end
+
   end
 
   def edit

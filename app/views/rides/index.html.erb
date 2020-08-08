@@ -21,7 +21,7 @@
                 <p class="card-text"><%= ride.message %></p>
                 <p class="card-text">投稿者:<%= ride.user_name %></p>
                 <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+                  <small class="text-muted"><%= ride.created_at.to_s(:datetime) %>に投稿</small>
                 </p>
                 <%= link_to "詳細", ride_path(ride), class: "btn btn-primary" %>
                 <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->

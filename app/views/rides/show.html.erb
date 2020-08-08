@@ -6,7 +6,7 @@
         <div class="row">
           <h5 class="card-title col">タイトル :
             <%= @ride.title %></h5>
-          <p class="ride_poster col-2">投稿者 :
+          <p class="ride_poster col">投稿者 :
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
         </div>
         <p>開催日 : <%= @ride.sch_datetime.to_s(:datetime) %></p>
@@ -16,11 +16,8 @@
           <%= @ride.message %></p>
         <hr>
         <div class="row ride_details">
-          <p class="distance_mark col">走行距離 : <%= @ride.distance %></p>
-          <p class="col">ライドランク<%= @ride.rank %></p>
-          <p class="card-text col">
-            <small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small>
-          </p>
+          <p class="distance_mark col">走行距離 : <br><%= @ride.distance %></p>
+          <p class="rank_mark col">ライドランク<br><%= @rank %></p>
         </div>
         <hr>
         <p>【参加予定者】</p>
