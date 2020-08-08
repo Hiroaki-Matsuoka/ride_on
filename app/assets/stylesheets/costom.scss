@@ -1,5 +1,6 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
+
 // Top page
 .top_title {
   // margin: 100px 0 200px 0;
@@ -51,9 +52,6 @@
   margin: 0 auto !important;
 }
 
-.rides_index {
-  border-radius: 8px;
-}
 // .field_with_errors {
 //   @extend .has-error;
 //   .form-control {
@@ -80,10 +78,26 @@
 }
 
 .fa-biking {
-  background-color: skyblue;
+  // background-color: skyblue;
   padding: 8px;
+  border-radius: 180px;
+  border: 1px solid black;
+  // float: right;
+}
+
+.rides_index {
   border-radius: 8px;
-  float: right;
+  max-width: 90%;
+  height: 900px;
+}
+
+.position-static {
+  posotion: relative;
+}
+
+.btn_group {
+  position: absolute;
+  bottom: 30px;
 }
 
 // ライド詳細画面
