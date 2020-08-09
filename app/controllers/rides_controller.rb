@@ -26,15 +26,15 @@ class RidesController < ApplicationController
 
     case @ride.rank
     when 1
-      @rank = "初心者OK"
+      @rank = "強度1"
     when 2
-      @rank = "中級者向け"
+      @rank = "強度2"
     when 3
-      @rank = "上級者向け"
+      @rank = "強度3"
     when 4
-      @rank = "ランク4"
+      @rank = "強度4"
     else
-      @rank = "ランク5"
+      @rank = "強度5"
     end
 
   end

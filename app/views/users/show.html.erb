@@ -18,10 +18,6 @@
           <% end %>
           <ul class="list-group list-group-flush">
             <li class="list-group-item"><%= link_to "#{@user.name}のライド一覧", "/user_rides/#{@user.id}" %></li>
-            <li class="list-group-item">投稿写真</li>
-            <% @user.j_rides.each do |u| %>
-              <%= u.title %>
-            <% end %>
           </ul>
           <div class="card-body">
             <!-- フォロー・アンフォローのボタン -->

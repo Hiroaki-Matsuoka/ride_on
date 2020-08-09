@@ -4,7 +4,7 @@
     <div class="card mt-5">
       <div class="card-body ride_containts">
         <div class="row">
-          <h5 class="card-title col">タイトル :
+          <h5 class="card-title extention col">【Title】 <br>
             <%= @ride.title %></h5>
           <p class="ride_poster col">投稿者 :
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
@@ -16,8 +16,8 @@
           <%= @ride.message %></p>
         <hr>
         <div class="row ride_details">
-          <p class="distance_mark col">走行距離 : <br><%= @ride.distance %></p>
-          <p class="rank_mark col">ライドランク<br><%= @rank %></p>
+          <p class="distance_mark col-4 btn-success">【走行距離】<%= @ride.distance %></p>
+          <p class="rank_mark col-4 btn-primary">【Level】<br><%= @rank %></p>
         </div>
         <hr>
         <p>【参加予定者】</p>
