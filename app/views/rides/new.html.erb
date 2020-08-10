@@ -16,11 +16,11 @@
     <br />
     <%= f.select :distance, ['0~50km', '51~100km', '100~200km', '201km~'], { include_blank: '選択してください' }, class: 'pub' %><br />
     <br />
-    <label><%= f.radio_button :rank, '1', class: :rd %> 1 (誰でもOK)</label><br />
-    <label><%= f.radio_button :rank, '2', class: :rd %> 2 (知人のみOK)</label><br />
-    <label><%= f.radio_button :rank, '3', class: :rd %> 3 (相互フォローのみOK)</label><br />
-    <label><%= f.radio_button :rank, '4', class: :rd %> 4 (練習強度・100km以上)</label><br />
-    <label><%= f.radio_button :rank, '5', class: :rd %> 5 (練習強度・200km以上・標高2000m↑)</label><br />
+    <label><%= f.radio_button :rank, '1', class: :rd %> 1 (誰でもOK)</label>
+    <label><%= f.radio_button :rank, '2', class: :rd %> 2 (初心者向け)</label>
+    <label><%= f.radio_button :rank, '3', class: :rd %> 3 (中級者向け)</label>
+    <label><%= f.radio_button :rank, '4', class: :rd %> 4 (上級者向け)</label>
+    <label><%= f.radio_button :rank, '5', class: :rd %> 5 (相互フォローのみ)</label>
     <br />
     <label>Message</label>
     <p><%= f.text_area :message, size: "20x10", class: "form-control col-9" %></p>

@@ -15,10 +15,11 @@
         <p class="card-text">メッセージ :
           <%= @ride.message %></p>
         <hr>
-        <div class="ride_details">
-          <p class="distance_mark col-4 btn-success"><i class="fas fa-road"></i> <%= @ride.distance %></p>
-          <p class="rank_mark col-4 btn-primary"><i class="fas fa-exclamation-triangle"></i> <%= @rank %></p>
+        <div class="row ride_details">
+          <p class="distance_mark col-5 badge badge-success"><i class="fas fa-road"></i> <%= @ride.distance %></p>
+          <p class="rank_mark col-5 badge badge-danger"><i class="fas fa-exclamation-triangle"></i> <%= @rank %></p>
         </div>
+      
         <hr>
         <p>【参加予定者】</p>
         <% @ride.j_users.each do |n| %>
