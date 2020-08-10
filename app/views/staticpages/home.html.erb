@@ -3,11 +3,12 @@
   <div class="row">
     <div class="top_title">
       <h1 class="display-1 top_text">Ride on</h1>
-      <h2 class="display-6 top_text">ロードレーサーのマッチングアプリ</h2>
-      <p class="p_text top_text">サイクリストのコミュニティSNSです。</p>
-      <p class="p_text top_text">写真、ライド、コメントを投稿して新たな仲間を見つけましょう。</p>
-      <p class="p_text top_text">Google Mapによる集合場所の特定、カフェの詳細な情報などから日々のサイクリングを快適なものにします。</p>
-      <%= link_to "ライドを投稿！", new_ride_path, class: "btn btn-primary" %>
+      <h2 class="display-6 top_text">サイクリストの練習会投稿アプリです。</h2>
+      <p class="p_text top_text">簡単に練習会の参加や応募をすることができます。</p>
+      <p class="p_text top_text">条件や力量を確認することができるので初見の方でも安心して参加しやすく、</p>
+      <p class="p_text top_text">参加者の確認、Google Mapでの集合場所の確認、その場限りのトークができます。</p>
+      <img src="/assets/new_ride.png" alt="投稿画面" width="300" height="380">
+
     </div>
   </div>
 <% else %>
@@ -22,6 +23,6 @@
     <a href="/users/sign_in"><button type="button" class="btn btn-primary btn-lg btn-block my-3">ログインする</button></a>
     <a href="/users/sign_in"><button type="button" class="btn btn-secondary btn-lg btn-block my-3">新規登録</button></a>
     <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-warning btn-lg btn-block my-3", method: :post %>
-    <img src="./../../assets/images/sample_1.png" alt="投稿したライド">
+    <img src="/assets/ride_index.png" alt="投稿したライド" width="300" height="450">
   </div>
 <% end %>

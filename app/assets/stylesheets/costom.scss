@@ -84,12 +84,8 @@
   float: right;
 }
 
-.fa-biking {
-  // background-color: skyblue;
-  padding: 8px;
-  border-radius: 180px;
-  border: 1px solid black;
-  // float: right;
+.fa-users {
+  padding: 4px;
 }
 
 .rides_index {
@@ -133,16 +129,15 @@
     display: inline-block;
     padding: 5px 10px;
     border-radius: 8px;
-    font-size: 1vw;
+    // font-size: 1vw;
   }
 
   .ride_details {
-    margin: 50px;
+    margin: 20px;
   }
 
   .distance_mark {
-    // background-color: lightgreen;
-    // display: inline-block;
+    width: 400px;
     padding: 5px 3px;
     border-radius: 8px;
     font-size: 2vw;

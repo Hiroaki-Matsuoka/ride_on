@@ -14,8 +14,8 @@
               <div class="card-body">
                 <h5 class="card-title"><%= ride.title %></h5>
                 <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
-                  <p>
-                    <i class="fas fa-biking"></i>
+                  <p class="badge badge-info">
+                    <i class="fas fa-users fa-2x"></i>
                   </p>
                 <% end %>
                 <p class="card-text"><%= ride.message %></p>
