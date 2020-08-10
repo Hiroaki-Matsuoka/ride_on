@@ -16,8 +16,6 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href=<%= "/users/#{current_user.id}" %>>詳細ページへ</a>
             <a class="dropdown-item" href=<%= "/user_rides/#{current_user.id}" %>>投稿したライド</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
           </div>
         </li>
         <%= link_to " ユーザー一覧", users_path, class: "nav-item nav-link fas fa-users" %>

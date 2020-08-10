@@ -13,7 +13,7 @@ class RidesController < ApplicationController
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
        distance: ride_params[:distance], rank: ride_params[:rank], user_id: current_user.id)
     if @ride.save
-      redirect_to "/user_rides/#{current_user.id}"
+      redirect_to "/rides"
     else
 
     end

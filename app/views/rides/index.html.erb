@@ -9,13 +9,12 @@
             <div class="col-md-4">
               <img src="<%= "/user_images/#{ride.user_image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
             </div>
-
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title"><%= ride.title %></h5>
                 <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
                   <p class="badge badge-info">
-                    <i class="fas fa-users fa-2x"></i>
+                    <i class="fas fa-users fa-2x"> 参加!</i>
                   </p>
                 <% end %>
                 <p class="card-text"><%= ride.message %></p>
@@ -43,6 +42,7 @@
       </div>
     </div>
   <% end %>
+</div>
 <% else %>
-  <p>ログインしてください</p>
+<p>ログインしてください</p>
 <% end %>
