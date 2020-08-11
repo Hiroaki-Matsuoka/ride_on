@@ -6,6 +6,7 @@ class Ride < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+  validates :title, presence: true, length: { maximum: 20 }
 
   def user_name
     user.name

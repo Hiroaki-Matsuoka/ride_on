@@ -1,7 +1,9 @@
 <% provide(:title, "Post Ride") %>
 
   <div class="container mt-3 no-gutters bg-light new_ride_form">
+
     <%= form_for @ride, method: :post do |f| %>
+    <%= render 'shared/error_messages' %>
     <h1>新しいライドを投稿しよう！</h1>
     <label>タイトル</label>
     <p><%= f.text_field :title, {class: "form-control col-9"} %></p>
