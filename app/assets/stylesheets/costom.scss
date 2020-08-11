@@ -22,17 +22,31 @@
   background-color: white;
   padding: 3px 40px;
   border-radius: 8px;
+  margin: 20px 0;
 }
 
 .top_img {
   border-radius: 8px;
 }
 
+.app_contents_img {
+  width: 400px;
+  // height: 270px;
+}
+
 .app_discript {
-  margin-left: 50px;
-  h5 {
-    display: inline-block;
+  margin-top: 10px;
+  h4 {
+    // display: inline-block;
+    margin-bottom: 30px;
   }
+  p {
+    font-size: 16px;
+  }
+}
+
+.posting {
+  font-size: 26px !important;
 }
 
 .top_text {
