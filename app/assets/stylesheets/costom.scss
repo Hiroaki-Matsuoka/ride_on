@@ -12,9 +12,19 @@
 .top_title {
   // margin: 100px 0 200px 0;
   font-family: 'Oswald', sans-serif;
-
+  h1 {
+    color: #ffffff;
+  }
   h3 {
     font-size: 48px;
+  }
+  .top_text {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .p_text {
+    font-size: 20px;
   }
 }
 
@@ -22,7 +32,22 @@
   background-color: white;
   padding: 3px 40px;
   border-radius: 8px;
-  margin: 20px 0;
+  margin: 40px 0;
+}
+
+tr {
+  text-align: center;
+}
+
+.top_dis_img {
+  border-radius: 8px;
+  margin-left: 30px;
+}
+
+.dis_img_one {
+  width: 350px;
+  display: inline-block;
+  color: white;
 }
 
 .top_img {
@@ -49,13 +74,7 @@
   font-size: 20px !important;
 }
 
-.top_text {
-  color: #ffffff;
-}
 
-.p_text {
-  font-size: 20px;
-}
 
 #error_explanation {
   color: red;
