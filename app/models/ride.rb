@@ -7,6 +7,9 @@ class Ride < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
   validates :title, presence: true, length: { maximum: 20 }
+  validates :sch_datetime, presence: true
+  validates :message, presence: true
+  validates :address, presence: true
 
   def user_name
     user.name

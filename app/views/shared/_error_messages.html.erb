@@ -4,7 +4,7 @@
       The form contains<%= pluralize(@ride.errors.count, "error") %>.
     </div>
     <ul>
-      <%= @ride.errors.full_messages.each do |msg| %>
+      <% @ride.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
     <% end %>
   </ul>

@@ -12,11 +12,12 @@ class RidesController < ApplicationController
     @ride = Ride.create(title: ride_params[:title], message: ride_params[:message],
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
        distance: ride_params[:distance], rank: ride_params[:rank], user_id: current_user.id)
-       # debugger
+       # binding.pry
+
     if @ride.save
       redirect_to "/rides"
     else
-
+      render "/rides/new"
     end
   end
 
