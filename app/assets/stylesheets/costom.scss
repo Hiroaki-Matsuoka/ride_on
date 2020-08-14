@@ -8,9 +8,8 @@
 }
 
 
-// Top page
+// トップページ
 .top_title {
-  // margin: 100px 0 200px 0;
   font-family: 'Oswald', sans-serif;
   h1 {
     color: #ffffff;
@@ -26,6 +25,10 @@
   .p_text {
     font-size: 20px;
   }
+}
+
+.login_btn {
+  margin-top: 120px;
 }
 
 .bg-w-content {
@@ -56,13 +59,11 @@ tr {
 
 .app_contents_img {
   width: 400px;
-  // height: 270px;
 }
 
 .app_discript {
   margin-top: 10px;
   h4 {
-    // display: inline-block;
     margin-bottom: 30px;
   }
   p {
@@ -73,8 +74,6 @@ tr {
 .posting {
   font-size: 20px !important;
 }
-
-
 
 #error_explanation {
   color: red;

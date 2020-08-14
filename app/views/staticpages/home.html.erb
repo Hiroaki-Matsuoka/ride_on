@@ -62,13 +62,24 @@
 <% else %>
   <div class="container">
     <div class="top_title">
-      <h1 class="display-1 top_text">Ride on</h1>
-      <h2 class="display-6 top_text">サイクリストの練習会投稿アプリです。</h2>
-      <p class="p_text top_text">簡単に練習会の参加や応募をすることができます。</p>
-      <p class="p_text top_text">条件や力量を確認することができるので初見の方でも安心して参加しやすく、</p>
-      <p class="p_text top_text">参加者の確認、Google Mapでの集合場所の確認、その場限りのトークができます。</p>
-    </div>
-    <a href="/users/sign_in"><button type="button" class="btn btn-primary btn-lg btn-block my-3">ログインする</button></a>
+      <h1 class="display-1">Ride on</h1>
+      <h2 class="display-6 top_text">気軽にサイクリングを企画、参加することができるアプリです。</h2>
+      <h2 class="display-6 top_text"><u>Ride onの簡単な使い方</u></h2>
+      <div class="dis_img_container">
+      <table>
+        <tr>
+          <td><i class="fas fa-map-marked-alt fa-9x dis_img_one"></i>
+          <td><i class="fas fa-users fa-9x dis_img_one"></i>
+          <td><i class="fas fa-bicycle fa-9x dis_img_one"></i>
+        </tr>
+        <tr>
+          <td class="p_text">まずは条件を決めてサイクリングイベント<br>を企画しましょう</td>
+          <td class="p_text">参加者とコメントで<br>やりとりができます</td>
+          <td class="p_text">地図情報の場所に集まって<br>一緒にサイクリング！</td>
+        </tr>
+      </table>
+      </div>
+    <a class="login_btn" href="/users/sign_in"><button type="button" class="btn btn-primary btn-lg btn-block login_btn">ログインする</button></a>
     <a href="/users/sign_in"><button type="button" class="btn btn-secondary btn-lg btn-block my-3">新規登録</button></a>
     <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: "btn btn-warning btn-lg btn-block my-3", method: :post %>
   </div>
