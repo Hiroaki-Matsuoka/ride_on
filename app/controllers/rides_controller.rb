@@ -28,15 +28,15 @@ class RidesController < ApplicationController
 
     case @ride.rank
     when 1
-      @rank = "誰でもOK"
+      @rank = "1時間以内"
     when 2
-      @rank = "初心者向け"
+      @rank = "2時間以内"
     when 3
-      @rank = "中級者向け"
+      @rank = "2~4時間"
     when 4
-      @rank = "上級者向け"
+      @rank = "4~6時間"
     else
-      @rank = "相互フォローのみ"
+      @rank = "6時間以上"
     end
 
   end

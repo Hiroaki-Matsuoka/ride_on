@@ -180,7 +180,7 @@ tr {
 .ride_containts {
   margin: 0 5%;
   h5 {
-    font-size: 36px;
+    font-size: 32px;
   }
   .ride_poster {
     background-color: lightgray;
@@ -191,7 +191,7 @@ tr {
   }
 
   .ride_details {
-    
+
     display: flex;
     justify-content:center;
     width     : 100%;
@@ -234,6 +234,7 @@ tr {
        order: 3;
   }
 }
+
 /* microposts */
 .microposts {
   list-style: none;

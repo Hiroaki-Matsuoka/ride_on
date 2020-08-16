@@ -4,7 +4,7 @@
     <div class="card mt-5">
       <div class="card-body ride_containts">
         <div>
-          <h5 class="card-title col badge badge-secondary"><i class="fas fa-bicycle"></i> <br>
+          <h5 class="card-title title col badge badge-secondary"><i class="fas fa-bicycle"></i> <br>
             <%= @ride.title %></h5>
           <p class="ride_poster col badge badge-dark">投稿者 :
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
@@ -18,7 +18,7 @@
         <!-- サイクリングアイコン表示 -->
         <div class="ride_details">
           <p class="distance_mark badge-success"><i class="fas fa-road"></i> <%= @ride.distance %></p>
-          <p class="rank_mark badge-danger"><i class="fas fa-exclamation-triangle"></i> <%= @rank %></p>
+          <p class="rank_mark badge-warning"><i class="far fa-clock"></i> <%= @rank %></p>
         </div>
 
         <hr>

@@ -6,23 +6,23 @@
     <%= render 'shared/error_messages' %>
     <h1>新しいサイクリングの企画</h1>
     <label>タイトル</label>
-    <p><%= f.text_field :title, {class: "form-control col-9"} %></p>
+    <%= f.select :title, ['誰でもOK', '初心者向けサイクリング', '練習会', 'ロングライド'], { include_blank: '選択してください' }, class: 'pub col-3' %><br />
+
     <label>予定日</label>
     <br />
-    <%= f.date_field :sch_datetime %><br />
-    <br />
-    <br />
+    <%= f.date_field :sch_datetime %>
     <%= f.time_field :sch_datetime %><br />
     <br />
     <label>走行距離</label>
     <br />
     <%= f.select :distance, ['0~50km', '51~100km', '100~200km', '201km~'], { include_blank: '選択してください' }, class: 'pub' %><br />
     <br />
-    <label><%= f.radio_button :rank, '1', class: :rd %> 1 (誰でもOK)</label>
-    <label><%= f.radio_button :rank, '2', class: :rd %> 2 (初心者向け)</label>
-    <label><%= f.radio_button :rank, '3', class: :rd %> 3 (中級者向け)</label>
-    <label><%= f.radio_button :rank, '4', class: :rd %> 4 (上級者向け)</label>
-    <label><%= f.radio_button :rank, '5', class: :rd %> 5 (相互フォローのみ)</label>
+    <label>走行時間</label><br />
+    <label><%= f.radio_button :rank, '1', class: :rd %> (1h以内)</label>
+    <label><%= f.radio_button :rank, '2', class: :rd %> (~2h)</label>
+    <label><%= f.radio_button :rank, '3', class: :rd %> (2h~4h)</label>
+    <label><%= f.radio_button :rank, '4', class: :rd %> (4h~6h)</label>
+    <label><%= f.radio_button :rank, '5', class: :rd %> (6h~)</label>
     <br />
     <label>Message</label>
     <p><%= f.text_area :message, size: "10x5", class: "form-control col-9" %></p>
