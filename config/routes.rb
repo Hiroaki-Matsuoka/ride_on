@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
   resources :rides do
     resources :joins
-    resources :microposts, only: [:create]
+    resources :microposts, only: [:create, :destroy]
   end
   get "user_rides/:id" => "rides#user_rides"
   resources :users do

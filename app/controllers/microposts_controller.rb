@@ -23,7 +23,8 @@ class MicropostsController < ApplicationController
 
   def destroy
     micropost = Micropost.find(params[:id]).destroy
-    redirect_to user_path(current_user)
+    ride = Ride.find_by(id: micropost.ride.id)
+    redirect_to ride_path(ride.id)
   end
 
   private

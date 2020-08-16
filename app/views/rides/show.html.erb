@@ -19,7 +19,7 @@
           <p class="distance_mark col-5 badge badge-success"><i class="fas fa-road"></i> <%= @ride.distance %></p>
           <p class="rank_mark col-5 badge badge-danger"><i class="fas fa-exclamation-triangle"></i> <%= @rank %></p>
         </div>
-      
+
         <hr>
         <p>【参加予定者】</p>
         <% @ride.j_users.each do |n| %>
@@ -35,10 +35,12 @@
             <% unless c.user.blank? %>
               <a href="<%= user_path(c.user_id) %>"><img src="<%= "/user_images/#{c.user.image_name}" %>" alt="user_image" width="30" height="30"
                 class:"rounded-circle icon_image mr-3 mb-3"></a>
-              <% end %>
+            <% end %>
+            <!-- ユーザーの投稿があれば表示する -->
             <%= c.user.name unless c.user.blank? %>
             <br />
-            <%= c.content %>
+            <%= c.content unless c.user.blank? %>
+            <%= link_to "削除", "/rides/#{@ride.id}/microposts/#{c.id}", method: :delete, data: { confirm: '削除しますか？' } unless c.user.blank? %>
           </div>
           <br />
         <% end %>
