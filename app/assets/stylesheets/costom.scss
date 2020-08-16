@@ -191,29 +191,49 @@ tr {
   }
 
   .ride_details {
-    margin: 20px;
+    
+    display: flex;
+    justify-content:center;
+    width     : 100%;
+    flex-direction:row;
   }
 
   .distance_mark {
-    // width: 400px;
+    width: 500px;
+    height: 50px;
     padding: 5px 3px;
     border-radius: 8px;
-    font-size: 2vw;
+    font-size: 24px;
     margin-right: 5px;
     text-align: center;
   }
   .rank_mark {
     // background-color: skyblue;
     // display: inline-block;
+    height: 50px;
     padding: 5px 3px;
     border-radius: 8px;
-    font-size: 2vw;
+    font-size: 24px;
     text-align: center;
-    // width: 500px;
+    width: 500px;
   }
 }
 
-
+@media screen and (max-width: 576px) {
+  .ride_details {
+    flex-direction: column;
+    align-content:space-around;
+  }
+  .destance_mark .rank_mark {
+   width:100%;
+  }
+  .destance_mark:nth-child(1){
+       order: 2;
+  }
+  .rank_mark:nth-child(2){
+       order: 3;
+  }
+}
 /* microposts */
 .microposts {
   list-style: none;
