@@ -7,15 +7,20 @@
   font-size: 1vw;
 }
 
+.alert {
+  margin-bottom: 0 !important;
+}
 
 // トップページ
 .top_title {
   font-family: 'Oswald', sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8%;
   h1 {
     color: #ffffff;
   }
-  h3 {
-    font-size: 48px;
+  h2 {
+    font-size: 36px;
   }
   .top_text {
     color: #ffffff;
@@ -28,7 +33,7 @@
 }
 
 .login_btn {
-  margin-top: 120px;
+  margin-top: 50px;
 }
 
 .bg-w-content {
@@ -83,10 +88,12 @@ tr {
     margin: 0 0 30px;
   }
 }
+
 // current_userのトップ画面
 .user_top_card {
   margin: 320px 0 0 150px !important;
 }
+
 // ユーザー一覧
 .users_st {
   list-style: none;
@@ -100,6 +107,7 @@ tr {
     border-top: 1px solid #e8e8e8;
   }
 }
+
 // ride投稿画面
 .new_ride_form {
   padding: 50px 0 100px;
@@ -127,6 +135,7 @@ tr {
 .bg_wtext {
   color: #ffffff;
 }
+
 // users_show
 .mypage_card {
   margin-top: 50px;
@@ -187,11 +196,9 @@ tr {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 8px;
-    // font-size: 1vw;
   }
 
   .ride_details {
-
     display: flex;
     justify-content:center;
     width     : 100%;
@@ -208,8 +215,6 @@ tr {
     text-align: center;
   }
   .rank_mark {
-    // background-color: skyblue;
-    // display: inline-block;
     height: 50px;
     padding: 5px 3px;
     border-radius: 8px;

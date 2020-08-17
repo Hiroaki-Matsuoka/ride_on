@@ -6,7 +6,7 @@
         <div>
           <h5 class="card-title title col badge badge-secondary"><i class="fas fa-bicycle"></i> <br>
             <%= @ride.title %></h5>
-          <p class="ride_poster col badge badge-dark">投稿者 :
+          <p class="ride_poster col badge badge-dark">ガイド :
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
         </div>
         <p>開催日 : <%= @ride.sch_datetime.to_s(:datetime) %></p>
@@ -29,7 +29,9 @@
         <% end %>
       </div>
       <%= render 'rides/rides_address'%>
-      <div id="map" class="m-5"></div>
+      <p>開催地域
+      <%= @ride.prefecture %></p>
+      <div id="map" class="ml-5"></div>
       <p class="mt-5 mb-3 message_posts">コメント一覧</p>
         <% @microposts.each do |c| %>
           <div class="message_posts">

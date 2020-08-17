@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_06_235730) do
+ActiveRecord::Schema.define(version: 2020_08_17_002217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2020_08_06_235730) do
     t.datetime "sch_datetime"
     t.string "distance"
     t.integer "rank"
+    t.string "prefecture"
+    t.string "city"
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 

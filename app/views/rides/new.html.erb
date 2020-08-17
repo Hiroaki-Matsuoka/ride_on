@@ -17,16 +17,19 @@
     <br />
     <%= f.select :distance, ['0~50km', '51~100km', '100~200km', '201km~'], { include_blank: '選択してください' }, class: 'pub' %><br />
     <br />
-    <label>走行時間</label><br />
-    <label><%= f.radio_button :rank, '1', class: :rd %> (1h以内)</label>
-    <label><%= f.radio_button :rank, '2', class: :rd %> (~2h)</label>
-    <label><%= f.radio_button :rank, '3', class: :rd %> (2h~4h)</label>
-    <label><%= f.radio_button :rank, '4', class: :rd %> (4h~6h)</label>
-    <label><%= f.radio_button :rank, '5', class: :rd %> (6h~)</label>
+    <label>走行時間の目安</label><br />
+    <label><%= f.radio_button :rank, '1', class: :rd %> (1時間以内)</label>
+    <label><%= f.radio_button :rank, '2', class: :rd %> (2時間以内)</label>
+    <label><%= f.radio_button :rank, '3', class: :rd %> (4時間以内)</label>
+    <label><%= f.radio_button :rank, '4', class: :rd %> (6時間以内)</label>
+    <label><%= f.radio_button :rank, '5', class: :rd %> (6時間以上)</label>
     <br />
     <label>Message</label>
     <p><%= f.text_area :message, size: "10x5", class: "form-control col-9" %></p>
-    <label>Address</label>
+    <label>開催地域</label>
+    <%= f.select :prefecture, Ride.ride_areas.keys, {} %><br />
+    <br />
+    <label>集合場所</label>
     <p><%= f.text_field :address, {class: "form-control col-9"} %></p>
     <input class="btn btn-primary" type="submit" value="投稿">
   <% end %>

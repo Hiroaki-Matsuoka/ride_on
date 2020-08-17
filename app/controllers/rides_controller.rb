@@ -11,9 +11,7 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.create(title: ride_params[:title], message: ride_params[:message],
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
-       distance: ride_params[:distance], rank: ride_params[:rank], user_id: current_user.id)
-       # binding.pry
-
+       distance: ride_params[:distance], rank: ride_params[:rank], prefecture: ride_params[:prefecture], city: ride_params[:city], user_id: current_user.id)
     if @ride.save
       redirect_to "/rides"
     else
@@ -67,7 +65,7 @@ class RidesController < ApplicationController
   private
 
   def ride_params
-    params.require(:ride).permit(:title, :message, :address, :latitude, :longitude, :sch_datetime, :distance, :rank)
+    params.require(:ride).permit(:title, :message, :address, :latitude, :longitude, :sch_datetime, :distance, :rank, :prefecture, :city)
   end
 
 end
