@@ -1,40 +1,44 @@
 <% provide(:title, "Rides index") %>
 
-  <% if user_signed_in? %>
-    <div class="container">
-      <h1 class="bg_wtext mt-3">ライド一覧</h1>
-      <% @rides.each do |ride| %>
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="<%= "/user_images/#{ride.user_image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title"><%= ride.title %></h5>
-                <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
-                  <p class="badge badge-info">
-                    <i class="fas fa-users fa-2x"></i>
-                  </p>
-                <% end %>
-                <p class="card-text"><%= ride.message %></p>
-                <p class="card-text">ガイド:<%= ride.user_name %></p>
-                <p class="card-text">
-                  <small class="text-muted"><%= ride.created_at.to_s(:datetime) %>に投稿</small>
+<% if user_signed_in? %>
+  <div class="container rides_container">
+    <h1 class="bg_wtext mb-3">ライド一覧</h1>
+    <% @rides.each do |ride| %>
+    <!-- ライド情報 -->
+      <div class="rides_card mb-3">
+        <!-- ライドの中身 -->
+        <div class="row rides_card_container">
+          <div class="col-md-3 mt-4">
+            <img src="<%= "/user_images/#{ride.user_image_name}" %>" class="ml-4 img-thumbnail img-responsive" width="200" height="200">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= ride.title %></h5>
+              <h5 class="ride_index_prefecture">開催地域：<%= ride.prefecture %></h5>
+               Status:
+              <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
+                <p class="join_ride badge badge-info">
+                  <i class="fas fa-bicycle fa-2x"> 参加</i>
                 </p>
-                <%= link_to "詳細", ride_path(ride), class: "btn btn-primary" %>
-                <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->
-                <% if current_user.id == ride.user.id  %>
-                  <%= link_to "削除", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
-                <% end %>
-                <!-- 参加ボタン -->
-                <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
-                  <%= link_to("/joins/#{ride.id}/destroy", {method: "post"}) do %>
-                  <i class="fas fa-user-minus fa-2x j_icon btn-secondary"></i>
+              <% end %>
+              <p class="card-text"><%= ride.message.truncate(45) %></p>
+              <p class="card-text">ガイド:<%= ride.user_name %></p>
+              <p class="card-text">
+                <small class="text-muted"><%= ride.created_at.to_s(:datetime) %>に投稿</small>
+              </p>
+              <%= link_to "詳細を見る", ride_path(ride), class: "btn btn-primary" %>
+              <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->
+              <% if current_user.id == ride.user.id  %>
+                <%= link_to "削除する", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
+              <% end %>
+              <!-- 参加ボタン -->
+              <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
+                <%= link_to("/joins/#{ride.id}/destroy", {method: "post"}) do %>
+                <i class="fas fa-user-minus j_icon btn-secondary">取り消し</i>
                 <% end %>
               <% else %>
                 <%= link_to("/joins/#{ride.id}/create", {method: "post"}) do %>
-                <i class="fas fa-user-plus fa-2x j_icon btn-dark"></i>
+                <i class="fas fa-user-plus j_icon btn-dark">参加する</i>
               <% end %>
             <% end %>
           </div>

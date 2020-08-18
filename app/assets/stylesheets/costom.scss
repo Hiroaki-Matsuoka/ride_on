@@ -132,8 +132,36 @@ tr {
 // }
 
 // ライド一覧
+.rides_container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 20px;
+}
+
 .bg_wtext {
   color: #ffffff;
+}
+
+.rides_card {
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.card-body {
+  h5 {
+    display: inline-block;
+  }
+  .ride_index_prefecture {
+    margin-left: 8px;
+  }
+}
+
+
+// 参加マーク
+.join_ride {
+  margin-left: 8px;
+  i {
+    padding: 5px;
+  }
 }
 
 // users_show
@@ -146,7 +174,7 @@ tr {
 }
 
 .j_icon {
-  padding: 5px;
+  padding: 12px;
   border-radius: 4px;
   float: right;
 }
