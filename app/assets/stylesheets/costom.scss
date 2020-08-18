@@ -102,6 +102,45 @@ tr {
   }
 }
 
+.table {
+  th {
+    text-align: left;
+  }
+}
+
+#myTable {
+  td {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sm_show {
+    font-size: 9px !important;
+  }
+  .name_user {
+    width: 40%;
+  }
+  .email_user {
+    // font-size: 4px !important;
+    width: 30% !important;
+  }
+}
+
+// ユーザー詳細画面
+.user_show_container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 0;
+}
+
+.user_show_stats {
+  margin-bottom: 120px;
+}
+
+.user_edit_btn {
+  margin-top: 20px;
+}
+
 // ride投稿画面
 .new_ride_form {
   padding: 50px 0 100px;
