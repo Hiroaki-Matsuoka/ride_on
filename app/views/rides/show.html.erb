@@ -1,10 +1,10 @@
 <% provide(:title, "Ride") %>
 
-  <div class="container">
+  <div class="container ride_show_container">
     <div class="card mt-5">
       <div class="card-body ride_containts">
         <div>
-          <h5 class="card-title title col badge badge-secondary"><i class="fas fa-bicycle"></i> <br>
+          <h5 class="card-title title col badge badge-secondary">
             <%= @ride.title %></h5>
           <p class="ride_poster col badge badge-dark">ガイド :
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
@@ -17,8 +17,8 @@
         <hr>
         <!-- サイクリングアイコン表示 -->
         <div class="ride_details">
-          <p class="distance_mark badge-success"><i class="fas fa-road"></i> <%= @ride.distance %></p>
-          <p class="rank_mark badge-warning"><i class="far fa-clock"></i> <%= @rank %></p>
+          <p class="distance_mark badge-success"><i class="fas fa-road">走行距離</i><br /> <%= @ride.distance %></p>
+          <p class="rank_mark badge-info"><i class="far fa-clock">走行時間</i><br /> <%= @rank %></p>
         </div>
 
         <hr>
@@ -29,9 +29,12 @@
         <% end %>
       </div>
       <%= render 'rides/rides_address'%>
-      <p>開催地域
-      <%= @ride.prefecture %></p>
-      <div id="map" class="ml-5"></div>
+      <div class="holding_prefecture">
+        <p>開催地域
+        <%= @ride.prefecture %></p>
+      </div>
+
+      <div id="map" class="ride_map"></div>
       <p class="mt-5 mb-3 message_posts">コメント一覧</p>
         <% @microposts.each do |c| %>
           <div class="message_posts">

@@ -261,7 +261,7 @@ tr {
   }
 }
 
-// users_show
+// ユーザー詳細画面
 .mypage_card {
   margin-top: 50px;
 }
@@ -271,9 +271,9 @@ tr {
 }
 
 .j_icon {
-  padding: 12px;
-  border-radius: 4px;
-  float: right;
+  margin-top: 3px;
+  padding: 10px 10px 10px 10px !important;
+  // border-radius: 4px;
 }
 
 .fa-users {
@@ -295,7 +295,27 @@ tr {
   bottom: 30px;
 }
 
+@media screen and (max-width: 576px) {
+  .user_show_follow {
+    h1 {
+      font-size: 32px;
+    }
+    .name_user {
+      width:70%;
+    }
+    .email_user {
+      display: none;
+    }
+  }
+}
+
 // ライド投稿
+
+.ride_show_container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .input_form_container {
   margin-left: 50px !important;
@@ -331,14 +351,14 @@ tr {
 
   .ride_details {
     display: flex;
-    justify-content:center;
-    width     : 100%;
-    flex-direction:row;
+    // justify-content:center;
+    // width     : 100%;
+    // flex-direction:row;
   }
 
   .distance_mark {
-    width: 500px;
-    height: 50px;
+    width: 150px;
+    height: 80px;
     padding: 5px 3px;
     border-radius: 8px;
     font-size: 24px;
@@ -346,28 +366,53 @@ tr {
     text-align: center;
   }
   .rank_mark {
-    height: 50px;
+    height: 80px;
     padding: 5px 3px;
     border-radius: 8px;
     font-size: 24px;
     text-align: center;
-    width: 500px;
+    width: 150px;
   }
 }
 
+.holding_prefecture {
+  background-color: #666666;
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  width: 1012px;
+  margin: 0 auto;
+}
+
+.ride_map {
+  margin: 0 auto;
+}
+
 @media screen and (max-width: 576px) {
+  .ride_show_container {
+    h5 {
+      font-size: 20px;
+      padding: 15px 0;
+    }
+  }
   .ride_details {
-    flex-direction: column;
+    // flex-direction: column;
     align-content:space-around;
   }
-  .destance_mark .rank_mark {
-   width:100%;
+  .distance_mark, .rank_mark {
+   font-size: 14px !important;
+   height: 50px !important;
+   width: 100px !important;
+   font-weight: bold;
   }
   .destance_mark:nth-child(1){
        order: 2;
   }
   .rank_mark:nth-child(2){
        order: 3;
+  }
+  .holding_prefecture {
+    width: 312px;
   }
 }
 

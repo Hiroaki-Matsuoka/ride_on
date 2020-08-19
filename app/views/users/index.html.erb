@@ -20,7 +20,7 @@
             <tr>
               <td class="name_user"><img src="<%= "/user_images/#{user.image_name}" %>" class="mr-3" alt="user_image" width="50" height="50"><%= user.name %></td>
               <td class="email_user"><%= user.email %></td>
-              <td><%= link_to "詳細画面", user_path(user.id), { class: "btn btn-primary" } %></td>
+              <td><%= link_to "詳細", user_path(user.id), { class: "btn btn-primary" } %></td>
             </tr>
           <% end %>
         </tbody>

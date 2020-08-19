@@ -15,10 +15,9 @@
             <div class="card-body">
               <h5 class="card-title"><%= ride.title %></h5>
               <h5 class="ride_index_prefecture">開催地域：<%= ride.prefecture %></h5>
-               Status:
               <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
-                <p class="join_ride badge badge-info">
-                  <i class="fas fa-bicycle fa-2x"> 参加</i>
+                <p class="join_ride badge badge-danger">
+                  <i class="fas fa-bicycle">Join!</i>
                 </p>
               <% end %>
               <p class="card-text"><%= ride.message.truncate(45) %></p>
@@ -34,11 +33,11 @@
               <!-- 参加ボタン -->
               <% if Join.find_by(user_id: current_user.id, ride_id: ride.id) %>
                 <%= link_to("/joins/#{ride.id}/destroy", {method: "post"}) do %>
-                <i class="fas fa-user-minus j_icon btn-secondary">取り消し</i>
+                <i class="fas fa-user-minus j_icon btn btn-secondary">取り消し</i>
                 <% end %>
               <% else %>
                 <%= link_to("/joins/#{ride.id}/create", {method: "post"}) do %>
-                <i class="fas fa-user-plus j_icon btn-dark">参加する</i>
+                <i class="fas fa-user-plus j_icon btn btn-dark">参加する</i>
               <% end %>
             <% end %>
           </div>
