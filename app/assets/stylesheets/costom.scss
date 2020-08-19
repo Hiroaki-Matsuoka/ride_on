@@ -30,6 +30,10 @@
   margin-top: 50px;
 }
 
+.icon_only_sm {
+  display: none;
+}
+
 .bg-w-content {
   background-color: white;
   padding: 3px 40px;
@@ -83,6 +87,54 @@ tr {
   }
 }
 
+@media screen and (max-width: 576px) {
+  .top_title {
+    font-family: 'Oswald', sans-serif;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 4%;
+    h1 {
+      color: #ffffff;
+    }
+    h2,h3{
+      font-size: 14px;
+      font-weight: bold;
+    }
+    table {
+      display: none;
+    }
+    .top_text {
+      color: #ffffff;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .p_text {
+      font-size: 12px;
+    }
+  }
+
+  .icon_only_sm {
+    display: block;
+    margin-top: 10px;
+    .icon_one {
+      text-align: center;
+    }
+  }
+
+  .bg-w-content {
+    width: 360px;
+    margin: 0 2% !important;
+  }
+  img {
+    width: 90%;
+    height: 90%;
+  }
+  p {
+    font-size: 12px !important;
+  }
+}
+
+
 // current_userのトップ画面
 .user_top_card {
   margin: 320px 0 0 150px !important;
@@ -115,15 +167,11 @@ tr {
 }
 
 @media screen and (max-width: 576px) {
-  .sm_show {
-    font-size: 9px !important;
-  }
   .name_user {
-    width: 40%;
+    width: 70%;
   }
   .email_user {
-    // font-size: 4px !important;
-    width: 30% !important;
+    display: none;
   }
 }
 
