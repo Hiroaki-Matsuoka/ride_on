@@ -1,12 +1,11 @@
 <% provide(:title, "Post Ride") %>
 
-  <div class="container mt-3 no-gutters bg-light new_ride_form">
-
+  <div class="container mt-3 bg-light new_ride_form">
     <%= form_for @ride, method: :post do |f| %>
     <%= render 'shared/error_messages' %>
     <h1>新しいサイクリングの企画</h1>
     <label>タイトル</label>
-    <%= f.select :title, ['誰でもOK', '初心者向けサイクリング', '練習会', 'ロングライド'], { include_blank: '選択してください' }, class: 'pub col-3' %><br />
+    <%= f.select :title, ['誰でもOK', '初心者向けサイクリング', '練習会', 'ロングライド'], { include_blank: '選択してください' }, class: 'pub col-6' %><br />
 
     <label>予定日</label>
     <br />
@@ -20,17 +19,17 @@
     <label>走行時間の目安</label><br />
     <label><%= f.radio_button :rank, '1', class: :rd %> (1時間以内)</label>
     <label><%= f.radio_button :rank, '2', class: :rd %> (2時間以内)</label>
-    <label><%= f.radio_button :rank, '3', class: :rd %> (4時間以内)</label>
+    <label><%= f.radio_button :rank, '3', class: :rd %> (4時間以内)</label><br />
     <label><%= f.radio_button :rank, '4', class: :rd %> (6時間以内)</label>
     <label><%= f.radio_button :rank, '5', class: :rd %> (6時間以上)</label>
     <br />
     <label>Message</label>
-    <p><%= f.text_area :message, size: "10x5", class: "form-control col-9" %></p>
+    <p><%= f.text_area :message, size: "10x2", class: "form-control col-12" %></p>
     <label>開催地域</label>
     <%= f.select :prefecture, Ride.ride_areas.keys, {} %><br />
     <br />
     <label>集合場所</label>
-    <p><%= f.text_field :address, {class: "form-control col-9"} %></p>
+    <p><%= f.text_field :address, {class: "form-control col-12"} %></p>
     <input class="btn btn-primary" type="submit" value="投稿">
   <% end %>
 </div>
