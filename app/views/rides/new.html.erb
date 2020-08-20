@@ -1,6 +1,7 @@
 <% provide(:title, "Post Ride") %>
 
   <div class="container mt-3 bg-light new_ride_form">
+
     <%= form_for @ride, method: :post do |f| %>
     <%= render 'shared/error_messages' %>
     <h1>新しいサイクリングの企画</h1>
