@@ -3,6 +3,13 @@
 <% if user_signed_in? %>
   <div class="container rides_container">
     <h1 class="bg_wtext mb-3">ライド一覧</h1>
+    <div class="search_containts">
+      <%= search_form_for @q do |f| %>
+        <p><%= f.label :name, "地域検索", { class: "search_pref"} %></p>
+        <%= f.search_field :prefecture_cont, { class: "search_box"} %>
+        <%= f.submit "検索" %>
+      <% end %>
+    </div>
     <% @rides.each do |ride| %>
     <!-- ライド情報 -->
       <div class="rides_card mb-3">

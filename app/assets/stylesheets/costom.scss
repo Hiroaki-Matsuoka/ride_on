@@ -242,6 +242,19 @@ tr {
 // }
 
 // ライド一覧
+
+.search_containts {
+  p {
+    margin: 0;
+  }
+  .search_pref {
+    color: #ffffff;
+  }
+  .search_box {
+    margin-bottom: 20px;
+  }
+}
+
 .rides_container {
   background-color: rgba(0, 0, 0, 0.6);
   padding-top: 20px;

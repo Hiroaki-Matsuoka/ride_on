@@ -2,6 +2,8 @@ class RidesController < ApplicationController
 
   def index
     @rides = Ride.all
+    @q = Ride.ransack(params[:q])
+    @rides = @q.result(distinct: true)
   end
 
   def new
