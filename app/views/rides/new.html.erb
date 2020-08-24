@@ -7,7 +7,8 @@
     <h1>新しいサイクリングの企画</h1>
     <hr>
     <label>タイトル</label>
-    <%= f.select :title, ['誰でもOK', '初心者向けサイクリング', '練習会', 'ロングライド'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
+    <br />
+    <%= f.select :title, ['誰でも参加OK', '初心者向け', '中級者向け', '上級者向け'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
     <label>予定日</label>
     <br />
     <%= f.date_field :sch_datetime %>

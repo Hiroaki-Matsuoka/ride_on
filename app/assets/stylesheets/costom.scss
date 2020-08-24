@@ -247,6 +247,12 @@ tr {
 
 // ライド一覧
 
+.rides_card {
+  .star {
+    color: black !important;
+  }
+}
+
 .search_containts {
   p {
     margin: 0;
@@ -283,6 +289,9 @@ tr {
   }
 }
 
+.ride_index_guide {
+  display: inline-block;
+}
 
 // 参加マーク
 .join_ride {

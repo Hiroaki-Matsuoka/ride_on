@@ -28,7 +28,9 @@
                 </p>
               <% end %>
               <p class="card-text"><%= ride.message.truncate(45) %></p>
-              <p class="card-text">ガイド:<%= ride.user_name %></p>
+              <p class="card-text ride_index_guide">ガイド:<%= ride.user_name %></p>
+              <a href="<%= followers_user_path(ride.user) %>"><p class="card-text ride_index_guide star"><i class="far fa-star"></i>(<%= ride.user.followers.count %>)</p></a>
+
               <p class="card-text">
                 <small class="text-muted"><%= ride.created_at.to_s(:datetime) %>に投稿</small>
               </p>
