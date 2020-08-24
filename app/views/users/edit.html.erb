@@ -1,8 +1,27 @@
 <%= provide(:title, "User Edit") %>
 
-<%= form_with model: @user, local: true, multipart: true do |f| %>
-  <p>Name: <%= f.text_field :name %></p>
-  <p>Mail Address: <%= f.text_field :email %></p>
-  <input name="image" type="file">
-  <%= f.submit "送信" %>
-<% end %>
+<div class="container">
+  <div class="top_title">
+    <h2 class="display-1 top_text">ユーザー情報編集</h2>
+    <%= form_with model: @user, local: true, multipart: true do |f| %>
+      <div class="field top_text">
+        <%= f.label :name %><br />
+        <p><%= f.text_field :name %></p>
+      </div>
+      <div class="field top_text">
+        <%= f.label :email %><br />
+        <p><%= f.text_field :email %></p>
+      </div>
+      <div class="field top_text">
+        <%= f.label :自己紹介 %><br />
+        <p><%= f.text_area :introduce %></p>
+      </div>
+      <div class="field top_text">
+        <input name="image" type="file">
+      </div>
+      <div class="field top_text">
+        <%= f.submit "送信" %>
+      </div>
+    <% end %>
+  </div>
+</div>
