@@ -26,17 +26,15 @@ class RidesController < ApplicationController
     @microposts = @ride.microposts
     @micropost = @ride.microposts.build
 
-    case @ride.rank
+    case @ride.distance
     when 1
-      @rank = "1時間以内"
+      @distance = "0~50km"
     when 2
-      @rank = "2時間以内"
+      @distance = "51~100km"
     when 3
-      @rank = "2~4時間"
-    when 4
-      @rank = "4~6時間"
+      @distance = "101~200km"
     else
-      @rank = "6時間以上"
+      @distance = "201km~"
     end
 
   end

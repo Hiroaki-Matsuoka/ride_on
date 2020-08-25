@@ -7,7 +7,6 @@ class StaticpagesController < ApplicationController
       @q = Ride.ransack(params[:q])
       @rides = @q.result(distinct: true)
       @user = User.find(current_user.id)
-      # @user.joins = User.paginate(page: params[:page], per_page: 3)
     end
   end
 

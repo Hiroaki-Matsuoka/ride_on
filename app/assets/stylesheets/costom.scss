@@ -55,6 +55,12 @@
   text-align: center;
 }
 
+.card-img-top {
+  width: 40px !important;
+  height: 40px !important;
+  float: right;
+}
+
 .top_title {
   font-family: 'Oswald', sans-serif;
   background-color: rgba(0, 0, 0, 0.6);
@@ -461,15 +467,6 @@ tr {
   }
 }
 
-.holding_prefecture {
-  background-color: #666666;
-  color: #ffffff;
-  text-align: center;
-  font-size: 24px;
-  width: 1012px;
-  margin: 0 auto;
-}
-
 .ride_map {
   margin: 0 auto;
 }
@@ -496,9 +493,6 @@ tr {
   }
   .rank_mark:nth-child(2){
        order: 3;
-  }
-  .holding_prefecture {
-    width: 312px;
   }
 }
 

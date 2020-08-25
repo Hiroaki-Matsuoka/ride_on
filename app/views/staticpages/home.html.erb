@@ -25,7 +25,7 @@
         <div class="card m-3 col-6 top_user_card">
           <div class="row">
             <div class="col-md-4">
-              <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
+              <img src="<%= "/user_images/#{@user.image_name}" %>" class="img-thumbnail img-responsive" width="200" height="200">
             </div>
             <div class="col-md-8">
               <div class="card-body top_user_show">
@@ -50,6 +50,7 @@
             <div class="top_user_join_ride">
               <%= link_to ride_path(join.ride.id) do %>
               <i class="fas fa-bicycle"></i> <%= join.ride.title %>
+              <img src="<%= "/user_images/#{join.ride.user.image_name}" %>" class="card-img-top img-thumbnail img-responsive">
               <hr>
               <% end %>
             </div>
