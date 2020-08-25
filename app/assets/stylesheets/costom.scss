@@ -20,6 +20,41 @@
 }
 
 // トップページ
+
+.top_user_show {
+  width: 400px;
+  display: inline-block;
+  h5 {
+    display:block !important;
+  }
+}
+
+.top_user_card {
+  height: 220px;
+}
+
+.top_user_join_rides {
+  background-color: #ffffff;
+  // width: 400px;
+}
+
+.top_user_join_ride {
+  font-size: 18px;
+  a {
+    color: black;
+  }
+}
+
+.top_user_join_ride_btn {
+  float: right;
+}
+
+.home_search_area {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
 .top_title {
   font-family: 'Oswald', sans-serif;
   background-color: rgba(0, 0, 0, 0.6);
@@ -68,6 +103,10 @@ tr {
   width: 350px;
   display: inline-block;
   color: white;
+}
+
+.dis_img_container {
+  margin-top: 50px;
 }
 
 .top_img {
@@ -204,7 +243,7 @@ tr {
 }
 
 .show_introduce {
-  padding: 60px 0;
+  padding: 30px 0;
 }
 
 // ride投稿画面
@@ -263,6 +302,13 @@ tr {
   .search_box {
     margin-bottom: 20px;
   }
+}
+
+.rides_search_area {
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .rides_container {

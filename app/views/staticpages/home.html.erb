@@ -7,74 +7,61 @@
       <h1 class="display-1">Ride on</h1>
       <h2 class="display-6 top_text">気軽にサイクリング仲間とマッチングできるアプリです。</h2>
       <h3 class="display-6 top_text">あなたがガイドになってお気に入りのコースを案内したり</h3>
-      <h3 class="display-6 top_text">地域のライドを探して参加 <i class="fas fa-user-plus"></i> することもできます！</h3>
-      <h2 class="display-6 top_text"><u>Ride onの簡単な使い方</u></h2>
+      <h3 class="display-6 top_text">地域のライドを探して参加
+        <i class="fas fa-user-plus"></i>
+        することもできます！</h3>
+      <h2 class="display-6 top_text">
+        <u>企画を探して参加しよう！</u>
+      </h2>
       <div class="dis_img_container">
-      <!-- PC表示用テーブル -->
-      <table>
-        <tr>
-          <td><i class="fas fa-map-marked-alt fa-9x dis_img_one"></i>
-          <td><i class="fas fa-users fa-9x dis_img_one"></i>
-          <td><i class="fas fa-bicycle fa-9x dis_img_one"></i>
-        </tr>
-        <tr>
-          <td class="p_text top_text">まずはサイクリングを企画するか<br>参加したいライドを探しましょう<br> </td>
-          <td class="p_text top_text">企画者は参加者を待ちます<br>参加希望の方は参加ボタン<br>を押しましょう</td>
-          <td class="p_text top_text">あとは集合場所に集まって<br>サイクリングを楽しみましょう！</td>
-        </tr>
-      </table>
-      <!-- スマホ表示用 -->
-      <div class="icon_only_sm">
-        <div class="icon_one">
-          <i class="fas fa-map-marked-alt fa-9x dis_img_one"></i>
-          <p class="p_text top_text">まずはサイクリングを企画するか<br>参加したいライドを探しましょう</p>
-        </div>
-        <div class="icon_one">
-          <i class="fas fa-users fa-9x dis_img_one"></i>
-          <p class="p_text top_text">企画者は参加者を待ちます<br>参加希望の方は参加ボタン<br>を押しましょう</p>
-        </div>
-        <div class="icon_one">
-          <i class="fas fa-bicycle fa-9x dis_img_one"></i>
-          <p class="p_text top_text">あとは集合場所に集まって<br>サイクリングを楽しみましょう！</p>
-        </div>
+        <div class="home_search_area">
+          <%= search_form_for @q do |f| %>
+          <%= f.label :name, "エリアから探す", { class: "search_pref"} %>
+          <%= f.search_field :prefecture_cont, { class: "search_box form-control-lg col-4"} %>
+          <%= f.submit "検索", { class: "btn btn-primary" } %>
+        <% end %>
       </div>
-      </div>
-      <div class="bg-w-content">
-        <div class="app_contents row mt-5">
-          <div class="app_contents_img">
-            <img class="top_img" src="/assets/post_ride.png" alt="投稿画面" width="300" height="300">
-          </div>
-          <div class="app_discript">
-            <h4><strong>○サイクリングを企画しよう！</strong></h4>
-            <p>企画者は左上の投稿ボタンからライドを投稿しましょう！</p>
-            <p>参加者はライド一覧から気になる企画を探してみてください。</p>
-          </div>
-        </div>
-        <hr>
-        <div class="app_contents row mt-5">
-          <div class="app_contents_img">
-            <img class="top_img" src="/assets/rideindex.png" alt="投稿画面" width="350" height="270">
-          </div>
-          <div class="app_discript">
-            <h4><strong>○企画されたサイクリング一覧を確認</strong></h4>
-            <p>条件に合う練習会があれば<i class="fas fa-user-plus "></i>ボタンを押して参加表明しましょう。</p>
-            <p>参加予定の練習会には<i class="fas fa-bicycle"> 参加</i>マークがつきます。</p>
+      <div class="row">
+        <div class="card m-3 col-6 top_user_card">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="<%= "/user_images/#{@user.image_name}" %>" class="card-img-top img-thumbnail img-responsive" width="200" height="200">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body top_user_show">
+                <h5 class="card-title"><%= @user.name %></h5>
+                <h5 class="card-title">投稿したライド数(<%= @user.rides.count %>)</h5>
+                <section class="stats">
+                  <%= render 'shared/stats' %>
+                </section>
+                <!-- ログインしてるユーザーの場合のみ投稿フォーム表示 -->
+                <% if current_user.id == @user.id %>
+                  <%= link_to "編集する", edit_user_path(current_user), { class: "btn btn-primary user_edit_btn"} %>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="app_contents row mt-5">
-          <div class="app_contents_img">
-            <img class="top_img" src="/assets/rideshow.png" alt="投稿画面" width="350" height="270">
-          </div>
-          <div class="app_discript">
-            <h4><strong>○練習会詳細画面</strong></h4>
-            <p>詳細画面では<i class="fas fa-road">走行距離</i>や<i class="fas fa-exclamation-triangle">参加条件</i>が確認できます。</p>
-            <p><i class="fas fa-map-marked-alt">集合場所</i>もGoogle Mapで確認できます！</p>
+        <div class="card my-3 col-5">
+
+          <p>参加予定のライド</p>
+          <div class="top_user_join_rides">
+            <% @user.joins.each do |join| %>
+            <div class="top_user_join_ride">
+              <%= link_to ride_path(join.ride.id) do %>
+              <i class="fas fa-bicycle"></i> <%= join.ride.title %>
+              <hr>
+              <% end %>
+            </div>
+
+            <% end %>
           </div>
         </div>
-        <hr>
       </div>
     </div>
   </div>
+</div>
+</div>
 <% else %>
   <div class="container">
     <div class="top_title">

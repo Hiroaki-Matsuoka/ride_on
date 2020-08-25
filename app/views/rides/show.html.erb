@@ -13,7 +13,7 @@
         <hr>
 
         <p class="card-text">メッセージ :
-          <%= @ride.message %></p>
+          <%= safe_join(@ride.message.split("\n"), tag(:br)) %></p>
         <hr>
         <!-- サイクリングアイコン表示 -->
         <div class="ride_details">
