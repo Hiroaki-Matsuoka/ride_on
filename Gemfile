@@ -22,7 +22,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'geocoder'
 gem "dotenv-rails"
 gem 'faker',          '1.7.3'
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass', '3.4.1'
 gem 'pry-byebug', group: :development
 gem 'ransack'
 gem 'mysql2'
