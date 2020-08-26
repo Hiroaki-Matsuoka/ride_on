@@ -12,10 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_08_24_131714) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "active_admin_comments", force: :cascade do |t|
+  create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
@@ -29,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "admin_users", force: :cascade do |t|
+  create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -41,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "joins", force: :cascade do |t|
+  create_table "joins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "ride_id"
     t.datetime "created_at", null: false
@@ -51,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["user_id"], name: "index_joins_on_user_id"
   end
 
-  create_table "microposts", force: :cascade do |t|
+  create_table "microposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -62,7 +59,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["user_id"], name: "index_microposts_on_user_id"
   end
 
-  create_table "relationships", force: :cascade do |t|
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
     t.datetime "created_at", null: false
@@ -72,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
-  create_table "rides", force: :cascade do |t|
+  create_table "rides", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "message"
     t.string "address"
@@ -89,7 +86,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.index ["user_id"], name: "index_rides_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
