@@ -29,7 +29,6 @@
           <%= n.name %>
         <% end %>
       </div>
-      <script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap"></script>
       <%= render 'rides/rides_address'%>
       <div id="map" class="ride_map"></div>
       <p class="mt-5 mb-3 message_posts">コメント一覧</p>
