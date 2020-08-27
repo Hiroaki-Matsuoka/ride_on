@@ -14,6 +14,7 @@ class RidesController < ApplicationController
     @ride = Ride.create(title: ride_params[:title], message: ride_params[:message],
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
        distance: ride_params[:distance], rank: ride_params[:rank], prefecture: ride_params[:prefecture], city: ride_params[:city], user_id: current_user.id)
+    @join = Join.create(user_id: current_user.id, ride_id: @ride.id)
     if @ride.save
       redirect_to "/rides"
     else
@@ -35,6 +36,17 @@ class RidesController < ApplicationController
       @distance = "101~200km"
     else
       @distance = "201km~"
+    end
+
+    case @ride.rank
+    when 0
+      @rank = "誰でも参加OK"
+    when 1
+      @rank = "初心者向け"
+    when 2
+      @rank = "中級者向け"
+    else
+      @rank = "上級者向け"
     end
 
   end

@@ -457,6 +457,7 @@ tr {
     margin-right: 5px;
     text-align: center;
   }
+
   .rank_mark {
     height: 80px;
     padding: 5px 3px;
@@ -464,6 +465,16 @@ tr {
     font-size: 24px;
     text-align: center;
     width: 150px;
+    margin-right: 5px;
+  }
+
+  .rule_mark {
+    height: 80px;
+    padding: 5px 3px;
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+    width: 200px;
   }
 }
 
