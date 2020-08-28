@@ -1,9 +1,31 @@
 <%= provide(:title, "Ride Edit") %>
 
-<%= form_with model: @ride, local: true do |f| %>
-<p>Title:
-  <%= f.text_field :title %></p>
-<p>Message:
-  <%= f.text_area :message %></p>
-<%= f.submit "送信" %>
+<div class="container mt-3 bg-light new_ride_form">
+
+  <%= form_with model: @ride, local: true do |f| %>
+  <%= render 'shared/error_messages' %>
+  <h1>新規投稿</h1>
+  <hr>
+  <label>タイトル</label>
+  <br />
+  <%= f.text_field :title, class: 'pub col-8' %><br />
+  <br />
+  <label>開催予定日</label>
+  <br />
+  <%= f.date_field :sch_datetime %>
+  <%= f.time_field :sch_datetime %><br />
+  <br />
+  <label>メッセージ</label>
+  <p><%= f.text_area :message, size: "10x2", class: "form-control col-12" %></p>
+  <label>開催地域</label><br />
+  <%= f.select :prefecture, Ride.ride_areas.keys, {} %><br />
+  <label>走行距離</label><br />
+  <%= f.select :distance, ['0~50km', '51~100km', '101~200km', '200km~'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
+  <label>参加条件</label>
+  <br />
+    <%= f.select :rank, ['誰でも参加OK', 'フォロワーのみ', '相互フォロー'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
+  <label>集合場所</label>
+  <p><%= f.text_field :address, {class: "form-control col-12"} %></p>
+  <input class="btn btn-primary" type="submit" value="投稿">
 <% end %>
+</div>
