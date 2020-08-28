@@ -5,15 +5,24 @@
   <div class="row">
     <div class="top_title">
       <h1 class="display-1">Ride on</h1>
-      <h2 class="display-6 top_text"></h2>
-      <h3 class="display-6 top_text"></h3>
-      <!-- <h3 class="display-6 top_text">地域のライドを探して参加
-        <i class="fas fa-user-plus"></i>
-        することもできます！</h3> -->
-        <!-- <img src="assets/header.png" alt="header_img" width="1000" height="300"> -->
-      <h2 class="display-6 top_text">
-        <u>行きたい地域を検索！</u>
-      </h2>
+      <h2 class="display-6 top_text">サイクリストのマッチングアプリです</h2>
+      <h3 class="display-6 top_text">あなたのお気に入りのコースを案内したり</h3>
+      <h3 class="display-6 top_text">行きたい地域のライドを探して参加することもできます！</h3>
+      <div class="dis_img_container">
+      <table>
+        <tr>
+          <td><i class="fas fa-map-marked-alt fa-7x dis_img_one"></i>
+          <td><i class="fas fa-users fa-7x dis_img_one"></i>
+          <td><i class="fas fa-bicycle fa-7x dis_img_one"></i>
+        </tr>
+        <tr>
+          <td class="p_text top_text">まずはサイクリングを企画するか<br>参加したいライドを検索！<br> </td>
+          <td class="p_text top_text">企画者は参加者を募集！<br>参加希望の方は参加ボタン<br>を押しましょう！</td>
+          <td class="p_text top_text">開催予定日に集合して<br>サイクリングを楽しもう！</td>
+        </tr>
+      </table>
+      </div>
+
       <div class="dis_img_container">
         <div class="home_search_area">
           <%= search_form_for @q do |f| %>
@@ -45,8 +54,8 @@
             </div>
           </div>
         </div>
-        <div class="card my-3 col-5">
 
+        <div class="card my-3 col-5">
           <p>参加予定のライド</p>
           <div class="top_user_join_rides">
             <% @user.joins.each do |join| %>
@@ -57,34 +66,35 @@
               <hr>
               <% end %>
             </div>
-
             <% end %>
           </div>
         </div>
+
       </div>
     </div>
   </div>
+    </div>
 </div>
 </div>
 <% else %>
   <div class="container">
     <div class="top_title">
       <h1 class="display-1">Ride on</h1>
-      <h2 class="display-6 top_text">気軽にサイクリング仲間とマッチングできるアプリです。</h2>
-      <h3 class="display-6 top_text">あなたがガイドになってお気に入りのコースを案内したり</h3>
-      <h3 class="display-6 top_text">地域のライドを探して参加することもできます！</h3>
-      <h2 class="display-6 top_text"><u>Ride onの簡単な使い方</u></h2>
+      <h2 class="display-6 top_text">サイクリストのマッチングアプリです</h2>
+      <h3 class="display-6 top_text">あなたのお気に入りのコースを案内したり</h3>
+      <h3 class="display-6 top_text">行きたい地域のライドを探して参加することもできます！</h3>
+      <h2 class="display-6 top_text"><u>ログインして検索！</u></h2>
       <div class="dis_img_container">
       <table>
         <tr>
-          <td><i class="fas fa-map-marked-alt fa-9x dis_img_one"></i>
-          <td><i class="fas fa-users fa-9x dis_img_one"></i>
-          <td><i class="fas fa-bicycle fa-9x dis_img_one"></i>
+          <td><i class="fas fa-map-marked-alt fa-7x dis_img_one"></i>
+          <td><i class="fas fa-users fa-7x dis_img_one"></i>
+          <td><i class="fas fa-bicycle fa-7x dis_img_one"></i>
         </tr>
         <tr>
-          <td class="p_text top_text">まずはサイクリングを企画するか<br>参加したいライドを探しましょう<br> </td>
-          <td class="p_text top_text">企画者は参加者を待ちます<br>参加希望の方は参加ボタン<br>を押しましょう</td>
-          <td class="p_text top_text">あとは集合場所に集まって<br>サイクリングを楽しみましょう！</td>
+          <td class="p_text top_text">まずはサイクリングを企画するか<br>参加したいライドを検索！<br> </td>
+          <td class="p_text top_text">企画者は参加者を募集！<br>参加希望の方は参加ボタン<br>を押しましょう！</td>
+          <td class="p_text top_text">開催予定日に集合して<br>サイクリングを楽しもう！</td>
         </tr>
       </table>
       </div>

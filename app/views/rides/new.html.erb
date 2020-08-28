@@ -17,7 +17,7 @@
     <br />
     <label>メッセージ</label>
     <p><%= f.text_area :message, size: "10x2", class: "form-control col-12" %></p>
-    <label>開催地域</label>
+    <label>開催地域</label><br />
     <%= f.select :prefecture, Ride.ride_areas.keys, {} %><br />
     <label>走行距離</label><br />
     <%= f.select :distance, ['0~50km', '51~100km', '101~200km', '200km~'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />

@@ -12,8 +12,8 @@
         <p>開催日 : <%= @ride.sch_datetime.to_s(:datetime) %></p>
         <hr>
 
-        <p class="card-text">メッセージ :
-          <%= safe_join(@ride.message.split("\n"), tag(:br)) %></p>
+        <p class="card-text">メッセージ</p>
+          <p><%= safe_join(@ride.message.split("\n"), tag(:br)) %></p>
         <hr>
         <!-- サイクリングアイコン表示 -->
         <div class="ride_details">
