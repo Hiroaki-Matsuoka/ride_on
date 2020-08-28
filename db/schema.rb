@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_131714) do
+ActiveRecord::Schema.define(version: 2020_08_28_034135) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_131714) do
     t.datetime "updated_at", null: false
     t.datetime "sch_datetime"
     t.string "distance"
-    t.integer "rank"
+    t.string "rank"
     t.string "prefecture"
     t.string "city"
     t.index ["user_id"], name: "index_rides_on_user_id"

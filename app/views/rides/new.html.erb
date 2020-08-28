@@ -4,17 +4,18 @@
 
     <%= form_for @ride, method: :post do |f| %>
     <%= render 'shared/error_messages' %>
-    <h1>新しいサイクリングの企画</h1>
+    <h1>新規投稿</h1>
     <hr>
     <label>タイトル</label>
     <br />
     <%= f.text_field :title, class: 'pub col-8' %><br />
-    <label>予定日</label>
+    <br />
+    <label>開催予定日</label>
     <br />
     <%= f.date_field :sch_datetime %>
     <%= f.time_field :sch_datetime %><br />
-
-    <label>Message</label>
+    <br />
+    <label>メッセージ</label>
     <p><%= f.text_area :message, size: "10x2", class: "form-control col-12" %></p>
     <label>開催地域</label>
     <%= f.select :prefecture, Ride.ride_areas.keys, {} %><br />
@@ -22,7 +23,7 @@
     <%= f.select :distance, ['0~50km', '51~100km', '101~200km', '200km~'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
     <label>参加条件</label>
     <br />
-      <%= f.select :rank, ['誰でも参加OK', 'フォロワーのみ', '相互フォロー', 'その他'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
+      <%= f.select :rank, ['誰でも参加OK', 'フォロワーのみ', '相互フォロー'], { include_blank: '選択してください' }, class: 'pub col-8' %><br />
     <label>集合場所</label>
     <p><%= f.text_field :address, {class: "form-control col-12"} %></p>
     <input class="btn btn-primary" type="submit" value="投稿">

@@ -19,9 +19,8 @@
         <div class="ride_details">
           <p class="distance_mark badge-primary"><i class="fas fa-road">走行距離</i><br /> <%= @ride.distance %></p>
           <p class="rank_mark badge-success"><i class="fas fa-globe-asia">開催地域</i><br /> <%= @ride.prefecture %></p>
-          <p class="rule_mark badge-info"><i class="fas fa-info-circle">参加条件</i><br /> <%= @rank %></p>
+          <p class="rule_mark badge-info"><i class="fas fa-info-circle">参加条件</i><br /> <%= @ride.rank %></p>
         </div>
-
         <hr>
         <p>【参加予定者】</p>
         <% @ride.j_users.each do |n| %>
