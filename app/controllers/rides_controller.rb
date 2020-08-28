@@ -15,7 +15,6 @@ class RidesController < ApplicationController
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
        distance: ride_params[:distance], rank: ride_params[:rank], prefecture: ride_params[:prefecture], city: ride_params[:city], user_id: current_user.id)
     @join = Join.create(user_id: current_user.id, ride_id: @ride.id)
-    binding.pry
     if @ride.save
       redirect_to "/rides"
     else
