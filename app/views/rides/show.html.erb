@@ -17,9 +17,9 @@
         <hr>
         <!-- サイクリングアイコン表示 -->
         <div class="ride_details">
-          <p class="distance_mark badge-success"><i class="fas fa-road">走行距離</i><br /> <%= @distance %></p>
-          <p class="rank_mark badge-info"><i class="fas fa-globe-asia">開催地域</i><br /> <%= @ride.prefecture %></p>
-          <p class="rule_mark badge-warning"><i class="fas fa-info-circle">参加条件</i><br /> <%= @rank %></p>
+          <p class="distance_mark badge-primary"><i class="fas fa-road">走行距離</i><br /> <%= @ride.distance %></p>
+          <p class="rank_mark badge-success"><i class="fas fa-globe-asia">開催地域</i><br /> <%= @ride.prefecture %></p>
+          <p class="rule_mark badge-info"><i class="fas fa-info-circle">参加条件</i><br /> <%= @rank %></p>
         </div>
 
         <hr>
@@ -29,8 +29,8 @@
           <%= n.name %>
         <% end %>
       </div>
-      <%= render 'rides/rides_address'%>
       <div id="map" class="ride_map"></div>
+      <%= render 'rides/rides_address'%>
       <p class="mt-5 mb-3 message_posts">コメント一覧</p>
         <% @microposts.each do |c| %>
           <div class="message_posts">

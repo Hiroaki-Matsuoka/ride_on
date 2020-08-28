@@ -15,6 +15,7 @@ class RidesController < ApplicationController
        address: ride_params[:address], sch_datetime: ride_params[:sch_datetime],
        distance: ride_params[:distance], rank: ride_params[:rank], prefecture: ride_params[:prefecture], city: ride_params[:city], user_id: current_user.id)
     @join = Join.create(user_id: current_user.id, ride_id: @ride.id)
+    binding.pry
     if @ride.save
       redirect_to "/rides"
     else
@@ -27,26 +28,13 @@ class RidesController < ApplicationController
     @microposts = @ride.microposts
     @micropost = @ride.microposts.build
 
-    case @ride.distance
-    when 1
-      @distance = "0~50km"
-    when 2
-      @distance = "51~100km"
-    when 3
-      @distance = "101~200km"
-    else
-      @distance = "201km~"
-    end
-
     case @ride.rank
     when 0
       @rank = "誰でも参加OK"
     when 1
-      @rank = "初心者向け"
+      @rank = "フォロワーのみ"
     when 2
-      @rank = "中級者向け"
-    else
-      @rank = "上級者向け"
+      @rank = "相互フォロー"
     end
 
   end
