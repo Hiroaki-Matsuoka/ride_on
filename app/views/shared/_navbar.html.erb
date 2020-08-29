@@ -9,15 +9,7 @@
         <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link fas fa-sign-out-alt" %>
         <%= link_to " トップ", root_path, class: "nav-item nav-link fas fa-home" %>
         <%= link_to " 投稿画面へ", new_ride_path, class: "nav-item nav-link fas fa-plus" %>
-        <li class="dropdown">
-          <a class="nav-link dropdown-toggle fas fa-user" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            マイページ
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href=<%= "/users/#{current_user.id}" %>>詳細ページへ</a>
-            <a class="dropdown-item" href=<%= "/user_rides/#{current_user.id}" %>>投稿したライド</a>
-          </div>
-        </li>
+        <%= link_to " マイページへ", "/users/#{current_user.id}", class: "nav-item nav-link fas fa-user" %>
         <%= link_to " ユーザー一覧", users_path, class: "nav-item nav-link fas fa-users" %>
         <%= link_to " ライド一覧", rides_path, class: "nav-item nav-link fas fa-bicycle" %>
       </div>
