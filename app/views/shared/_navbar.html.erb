@@ -6,6 +6,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <div class="navbar-nav">
+        <%= link_to "#{current_user.name}", current_user, class: "nav-item nav-link" %>
+        <img src="<%= "/user_images/#{current_user.image_name}" %>" class="card-img-top img-thumbnail img-responsive logging_user_photo">
         <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "nav-item nav-link fas fa-sign-out-alt" %>
         <%= link_to " トップ", root_path, class: "nav-item nav-link fas fa-home" %>
         <%= link_to " 投稿画面へ", new_ride_path, class: "nav-item nav-link fas fa-plus" %>
