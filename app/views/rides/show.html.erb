@@ -52,7 +52,7 @@
             <%= c.user.name unless c.user.blank? %>
             <br />
             <%= c.content unless c.user.blank? %>
-            <%= link_to "削除", "/rides/#{@ride.id}/microposts/#{c.id}", method: :delete, data: { confirm: '削除しますか？' } unless c.user.blank? %>
+            <%= link_to "削除", "/rides/#{@ride.id}/microposts/#{c.id}", method: :delete, data: { confirm: '削除しますか？' } if current_user.id == c.user.id %>
           </div>
           <br />
         <% end %>
