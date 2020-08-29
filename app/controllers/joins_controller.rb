@@ -17,6 +17,8 @@ class JoinsController < ApplicationController
       if request.referer&.include?("/rides/#{@ride}")
         #前のページが指定したURLだった場合のリンク先
          redirect_to("/rides/#{@ride}")
+      elsif request.referer&.include?("prefecture")
+        redirect_to request.referer
       else
         #その他のリンク先
           redirect_to("/rides")
@@ -34,6 +36,8 @@ class JoinsController < ApplicationController
       if request.referer&.include?("/rides/#{@ride}")
         #前のページが指定したURLだった場合のリンク先
          redirect_to("/rides/#{@ride}")
+      elsif request.referer&.include?("prefecture")
+         redirect_to request.referer
       else
         #その他のリンク先
           redirect_to("/rides")
