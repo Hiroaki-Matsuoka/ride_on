@@ -10,8 +10,19 @@
             <%= @ride.user_name %><br><small class="text-muted">投稿日<%= @ride.created_at.to_s(:datetime) %></small></p>
         </div>
         <p>開催日 : <%= @ride.sch_datetime.to_s(:datetime) %></p>
+        <p>集合場所 : <%= @ride.address %></p>
+        <!-- 参加・不参加 -->
+        <% if Join.find_by(user_id: current_user.id, ride_id: @ride.id) %>
+          <%= link_to("/joins/#{@ride.id}/destroy", {method: "post"}) do %>
+          <i class="fas fa-user-minus j_icon btn btn-secondary">取り消し</i>
+          <% end %>
+        <% else %>
+          <%= link_to("/joins/#{@ride.id}/create", {method: "post"}) do %>
+          <i class="fas fa-user-plus j_icon btn btn-dark">参加する</i>
+          <% end %>
+        <% end %>
+          <!-- 参加・不参加ここまで -->
         <hr>
-
         <p class="card-text">メッセージ</p>
           <p><%= safe_join(@ride.message.split("\n"), tag(:br)) %></p>
         <hr>
@@ -45,6 +56,7 @@
           </div>
           <br />
         <% end %>
+        <div class="ride_show_paginate"><%= will_paginate(@microposts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %></div>
         <% if user_signed_in? %>
           <%= form_with(model: [@ride, @micropost], local: true) do |f| %>
             <%= f.text_area :content, class: "form-control message_to_r", rows: 5 %>

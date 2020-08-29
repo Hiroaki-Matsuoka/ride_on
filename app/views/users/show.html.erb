@@ -53,6 +53,7 @@
                 <%= link_to "詳細を見る", ride_path(ride), class: "btn btn-primary" %>
                 <!-- ログイン中のユーザーとライドを投稿したユーザーの真偽判定 -->
                 <% if current_user.id == ride.user.id  %>
+                  <%= link_to "編集する", edit_ride_path(ride), class: "btn btn-info" %>
                   <%= link_to "削除する", ride_path(ride), method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
                 <% end %>
                 <!-- 参加ボタン -->

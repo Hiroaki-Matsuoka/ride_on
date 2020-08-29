@@ -28,7 +28,7 @@
                 </p>
               <% end %>
               <p class="card-text"><%= ride.message.truncate(45) %></p>
-              <p class="card-text ride_index_guide">ガイド:<%= link_to ride.user_name, user_path(ride.user_id), { class: "user_link" } %></p>
+              <p class="card-text ride_index_guide">企画者:<%= link_to ride.user_name, user_path(ride.user_id), { class: "user_link" } %></p>
               <a href="<%= followers_user_path(ride.user) %>"><p class="card-text ride_index_guide star"><i class="far fa-star"></i>(<%= ride.user.followers.count %>)</p></a>
 
               <p class="card-text">

@@ -12,8 +12,15 @@ class JoinsController < ApplicationController
         user_id: current_user.id,
         ride_id: params[:ride_id]
       )
-        @join.save
-        redirect_to("/rides")
+      @ride = @join.ride_id
+      @join.save
+      if request.referer&.include?("/rides/#{@ride}")
+        #前のページが指定したURLだった場合のリンク先
+         redirect_to("/rides/#{@ride}")
+      else
+        #その他のリンク先
+          redirect_to("/rides")
+      end
     end
 
     def destroy
@@ -22,7 +29,16 @@ class JoinsController < ApplicationController
         ride_id: params[:ride_id]
       )
       @join.destroy
-      redirect_to("/rides")
+      @ride = @join.ride_id
+      @join.save
+      if request.referer&.include?("/rides/#{@ride}")
+        #前のページが指定したURLだった場合のリンク先
+         redirect_to("/rides/#{@ride}")
+      else
+        #その他のリンク先
+          redirect_to("/rides")
+      end
+
     end
 
 end

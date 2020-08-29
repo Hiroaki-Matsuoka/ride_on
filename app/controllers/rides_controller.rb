@@ -24,7 +24,7 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
-    @microposts = @ride.microposts
+    @microposts = @ride.microposts.paginate(page: params[:page], per_page: 5)
     @micropost = @ride.microposts.build
   end
 
