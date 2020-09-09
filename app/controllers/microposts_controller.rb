@@ -2,13 +2,6 @@ class MicropostsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    # @micropost = current_user.microposts.build(micropost_params)
-    # if @micropost.save
-    #   flash[:notice] = "Micropost created!"
-    #   redirect_to user_path(current_user.id)
-    # else
-    #   redirect_to root_url
-    # end
     ride = Ride.find(params[:ride_id])
     @micropost = ride.microposts.build(micropost_params)
     @micropost.user_id = current_user.id

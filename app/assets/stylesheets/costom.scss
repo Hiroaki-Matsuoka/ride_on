@@ -35,7 +35,6 @@
 
 .top_user_join_rides {
   background-color: #ffffff;
-  // width: 400px;
 }
 
 .top_user_join_ride {
@@ -176,24 +175,14 @@ tr {
     }
   }
 
-  .icon_only_sm {
-    display: block;
-    margin-top: 10px;
-    .icon_one {
-      text-align: center;
-    }
+  .col-5 {
+    flex: initial !important;
+    max-width: initial !important;
+    margin: 0 4%;
   }
 
-  .bg-w-content {
-    width: 340px;
-    margin: 0 2% !important;
-    img {
-      width: 90%;
-      height: 90%;
-    }
-    p {
-      font-size: 12px !important;
-    }
+  .top_user_card {
+    display: none !important;
   }
 }
 
