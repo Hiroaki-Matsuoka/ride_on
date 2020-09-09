@@ -159,7 +159,7 @@ tr {
       color: #ffffff;
     }
     h2,h3{
-      font-size: 14px;
+      font-size: 12px;
       font-weight: bold;
     }
     table {
@@ -488,9 +488,11 @@ tr {
 }
 
 @media screen and (max-width: 576px) {
+
+
   .ride_show_container {
     h5 {
-      font-size: 20px;
+      font-size: 14px;
       padding: 15px 0;
     }
   }
@@ -498,7 +500,7 @@ tr {
     // flex-direction: column;
     align-content:space-around;
   }
-  .distance_mark, .rank_mark {
+  .distance_mark, .rank_mark, .rule_mark {
    font-size: 14px !important;
    height: 50px !important;
    width: 100px !important;
@@ -509,6 +511,9 @@ tr {
   }
   .rank_mark:nth-child(2){
        order: 3;
+  }
+  .rule_mark:nth-child(3){
+       order: 4;
   }
 }
 
